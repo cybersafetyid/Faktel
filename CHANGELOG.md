@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-09-21
+
 ### Added
 - `faktel-core`: `RgbImage` (RGBA/BGRA/NV21/YUV_420_888 conversion, crop, resize, rotate, flip), geometry
   (`Point`, `Rect`, `Quad`, `Homography`, `SimilarityTransform`), perspective and similarity warps, letterbox and
