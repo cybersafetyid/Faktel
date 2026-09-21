@@ -27,7 +27,7 @@ jobs:
         with: { distribution: temurin, java-version: 21 }
       - uses: gradle/actions/setup-gradle@v4
       - run: ./gradlew dokkaGenerate
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with: { path: build/dokka/html }
       - id: deployment
         uses: actions/deploy-pages@v4
