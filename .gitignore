@@ -1,0 +1,22 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+.kotlin/
+*.xcuserstate
+xcuserdata/
+/captures/
+.externalNativeBuild/
+.cxx/
+DerivedData/
+.swiftpm/
+.build/
+
+# Private research notes (never commit)
+docs/research/
+.vscode/
+
+# IDE / language-server output
+bin/

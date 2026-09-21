@@ -1,0 +1,29 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not attach real personal images (faces of others, real KTPs).** Describe the problem or use synthetic data.
+  - type: input
+    id: version
+    attributes: { label: Faktel version, placeholder: "0.1.0" }
+    validations: { required: true }
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      multiple: true
+      options: [Android, iOS, Desktop JVM]
+    validations: { required: true }
+  - type: input
+    id: device
+    attributes: { label: Device / OS version, placeholder: "Pixel 7, Android 15 / iPhone 14, iOS 18.2" }
+  - type: textarea
+    id: what
+    attributes: { label: What happened, description: "Expected vs actual behaviour" }
+    validations: { required: true }
+  - type: textarea
+    id: repro
+    attributes: { label: Minimal reproduction, description: "Code snippet and steps. Include exception text.", render: kotlin }

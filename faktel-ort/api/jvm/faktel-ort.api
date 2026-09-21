@@ -1,0 +1,10 @@
+public final class io/github/cybersafetyid/faktel/ort/OrtBackend {
+	public static final field INSTANCE Lio/github/cybersafetyid/faktel/ort/OrtBackend;
+	public static final field RUNTIME Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/ort/OrtInferenceEngine : io/github/cybersafetyid/faktel/core/inference/InferenceEngine {
+	public fun <init> ()V
+	public fun createSession ([BLio/github/cybersafetyid/faktel/core/inference/SessionOptions;)Lio/github/cybersafetyid/faktel/core/inference/InferenceSession;
+}
+

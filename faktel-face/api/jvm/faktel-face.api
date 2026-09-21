@@ -1,0 +1,241 @@
+public final class io/github/cybersafetyid/faktel/face/ArcFaceEmbedder : io/github/cybersafetyid/faktel/face/FaceEmbedder {
+	public static final field SIZE I
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BLio/github/cybersafetyid/faktel/core/inference/SessionOptions;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BLio/github/cybersafetyid/faktel/core/inference/SessionOptions;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun close ()V
+	public fun embed (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;)Lio/github/cybersafetyid/faktel/face/FaceEmbedding;
+}
+
+public final class io/github/cybersafetyid/faktel/face/Face {
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/geometry/Rect;Lio/github/cybersafetyid/faktel/face/FaceLandmarks;D)V
+	public final fun component1 ()Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public final fun component2 ()Lio/github/cybersafetyid/faktel/face/FaceLandmarks;
+	public final fun component3 ()D
+	public final fun copy (Lio/github/cybersafetyid/faktel/core/geometry/Rect;Lio/github/cybersafetyid/faktel/face/FaceLandmarks;D)Lio/github/cybersafetyid/faktel/face/Face;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/Face;Lio/github/cybersafetyid/faktel/core/geometry/Rect;Lio/github/cybersafetyid/faktel/face/FaceLandmarks;DILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/Face;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBox ()Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public final fun getLandmarks ()Lio/github/cybersafetyid/faktel/face/FaceLandmarks;
+	public final fun getScore ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceAnalysis {
+	public fun <init> (Ljava/util/List;Lio/github/cybersafetyid/faktel/face/Face;Lio/github/cybersafetyid/faktel/face/FaceQualityReport;Lio/github/cybersafetyid/faktel/face/LivenessResult;Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Lio/github/cybersafetyid/faktel/face/Face;
+	public final fun component3 ()Lio/github/cybersafetyid/faktel/face/FaceQualityReport;
+	public final fun component4 ()Lio/github/cybersafetyid/faktel/face/LivenessResult;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;Lio/github/cybersafetyid/faktel/face/Face;Lio/github/cybersafetyid/faktel/face/FaceQualityReport;Lio/github/cybersafetyid/faktel/face/LivenessResult;Ljava/util/List;)Lio/github/cybersafetyid/faktel/face/FaceAnalysis;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/FaceAnalysis;Ljava/util/List;Lio/github/cybersafetyid/faktel/face/Face;Lio/github/cybersafetyid/faktel/face/FaceQualityReport;Lio/github/cybersafetyid/faktel/face/LivenessResult;Ljava/util/List;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/FaceAnalysis;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFace ()Lio/github/cybersafetyid/faktel/face/Face;
+	public final fun getFaces ()Ljava/util/List;
+	public final fun getIssues ()Ljava/util/List;
+	public final fun getLiveness ()Lio/github/cybersafetyid/faktel/face/LivenessResult;
+	public final fun getQuality ()Lio/github/cybersafetyid/faktel/face/FaceQualityReport;
+	public fun hashCode ()I
+	public final fun isAcceptable ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceAnalyzer : java/lang/AutoCloseable {
+	public fun <init> (Lio/github/cybersafetyid/faktel/face/FaceDetector;Lio/github/cybersafetyid/faktel/face/FaceQualityAssessor;Lio/github/cybersafetyid/faktel/face/LivenessDetector;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/face/FaceDetector;Lio/github/cybersafetyid/faktel/face/FaceQualityAssessor;Lio/github/cybersafetyid/faktel/face/LivenessDetector;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun analyze (Lio/github/cybersafetyid/faktel/core/image/RgbImage;)Lio/github/cybersafetyid/faktel/face/FaceAnalysis;
+	public fun close ()V
+}
+
+public abstract interface class io/github/cybersafetyid/faktel/face/FaceDetector : java/lang/AutoCloseable {
+	public abstract fun detect (Lio/github/cybersafetyid/faktel/core/image/RgbImage;)Ljava/util/List;
+}
+
+public abstract interface class io/github/cybersafetyid/faktel/face/FaceEmbedder : java/lang/AutoCloseable {
+	public abstract fun embed (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;)Lio/github/cybersafetyid/faktel/face/FaceEmbedding;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceEmbedding {
+	public fun <init> ([F)V
+	public final fun cosineSimilarity (Lio/github/cybersafetyid/faktel/face/FaceEmbedding;)D
+	public final fun getValues ()[F
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceIssue : java/lang/Enum {
+	public static final field BLURRY Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field FACE_ANGLE Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field FACE_CUT_OFF Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field MULTIPLE_FACES Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field NO_FACE Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field TOO_BRIGHT Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field TOO_DARK Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static final field TOO_SMALL Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/cybersafetyid/faktel/face/FaceIssue;
+	public static fun values ()[Lio/github/cybersafetyid/faktel/face/FaceIssue;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceLandmarks {
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;)V
+	public final fun asList ()Ljava/util/List;
+	public final fun component1 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component2 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component3 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component4 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component5 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun copy (Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;)Lio/github/cybersafetyid/faktel/face/FaceLandmarks;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/FaceLandmarks;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/FaceLandmarks;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLeftEye ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getLeftMouth ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getNose ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getRightEye ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getRightMouth ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceMatchResult {
+	public fun <init> (DZ)V
+	public final fun component1 ()D
+	public final fun component2 ()Z
+	public final fun copy (DZ)Lio/github/cybersafetyid/faktel/face/FaceMatchResult;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/FaceMatchResult;DZILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/FaceMatchResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSimilarity ()D
+	public fun hashCode ()I
+	public final fun isMatch ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceMatcher {
+	public fun <init> ()V
+	public fun <init> (D)V
+	public synthetic fun <init> (DILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun compare (Lio/github/cybersafetyid/faktel/face/FaceEmbedding;Lio/github/cybersafetyid/faktel/face/FaceEmbedding;)Lio/github/cybersafetyid/faktel/face/FaceMatchResult;
+	public final fun getThreshold ()D
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceQualityAssessor {
+	public fun <init> ()V
+	public fun <init> (Lio/github/cybersafetyid/faktel/face/FaceQualityConfig;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/face/FaceQualityConfig;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun assess (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;)Lio/github/cybersafetyid/faktel/face/FaceQualityReport;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceQualityConfig {
+	public fun <init> ()V
+	public fun <init> (DDDDDDD)V
+	public synthetic fun <init> (DDDDDDDILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun component4 ()D
+	public final fun component5 ()D
+	public final fun component6 ()D
+	public final fun component7 ()D
+	public final fun copy (DDDDDDD)Lio/github/cybersafetyid/faktel/face/FaceQualityConfig;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/FaceQualityConfig;DDDDDDDILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/FaceQualityConfig;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMaxBrightness ()D
+	public final fun getMaxPitch ()D
+	public final fun getMaxRoll ()D
+	public final fun getMaxYaw ()D
+	public final fun getMinBlurScore ()D
+	public final fun getMinBrightness ()D
+	public final fun getMinFaceWidthRatio ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/FaceQualityReport {
+	public fun <init> (Lio/github/cybersafetyid/faktel/face/Face;DDLio/github/cybersafetyid/faktel/face/HeadPose;Ljava/util/List;)V
+	public final fun component1 ()Lio/github/cybersafetyid/faktel/face/Face;
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun component4 ()Lio/github/cybersafetyid/faktel/face/HeadPose;
+	public final fun component5 ()Ljava/util/List;
+	public final fun copy (Lio/github/cybersafetyid/faktel/face/Face;DDLio/github/cybersafetyid/faktel/face/HeadPose;Ljava/util/List;)Lio/github/cybersafetyid/faktel/face/FaceQualityReport;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/FaceQualityReport;Lio/github/cybersafetyid/faktel/face/Face;DDLio/github/cybersafetyid/faktel/face/HeadPose;Ljava/util/List;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/FaceQualityReport;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBlurScore ()D
+	public final fun getBrightness ()D
+	public final fun getFace ()Lio/github/cybersafetyid/faktel/face/Face;
+	public final fun getIssues ()Ljava/util/List;
+	public final fun getPose ()Lio/github/cybersafetyid/faktel/face/HeadPose;
+	public fun hashCode ()I
+	public final fun isAcceptable ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/HeadPose {
+	public fun <init> (DDD)V
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun copy (DDD)Lio/github/cybersafetyid/faktel/face/HeadPose;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/HeadPose;DDDILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/HeadPose;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPitch ()D
+	public final fun getRoll ()D
+	public final fun getYaw ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/HeadPoseKt {
+	public static final fun headPose (Lio/github/cybersafetyid/faktel/face/Face;)Lio/github/cybersafetyid/faktel/face/HeadPose;
+}
+
+public abstract interface class io/github/cybersafetyid/faktel/face/LivenessDetector : java/lang/AutoCloseable {
+	public abstract fun assess (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;)Lio/github/cybersafetyid/faktel/face/LivenessResult;
+}
+
+public final class io/github/cybersafetyid/faktel/face/LivenessResult {
+	public fun <init> (DZ)V
+	public final fun component1 ()D
+	public final fun component2 ()Z
+	public final fun copy (DZ)Lio/github/cybersafetyid/faktel/face/LivenessResult;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/LivenessResult;DZILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/LivenessResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getRealScore ()D
+	public fun hashCode ()I
+	public final fun isLive ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/face/MiniFasNetLivenessDetector : io/github/cybersafetyid/faktel/face/LivenessDetector {
+	public static final field INPUT_SIZE I
+	public static final field REAL_CLASS I
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BDDLio/github/cybersafetyid/faktel/core/inference/SessionOptions;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BDDLio/github/cybersafetyid/faktel/core/inference/SessionOptions;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun assess (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;)Lio/github/cybersafetyid/faktel/face/LivenessResult;
+	public fun close ()V
+}
+
+public final class io/github/cybersafetyid/faktel/face/YuNetFaceDetector : io/github/cybersafetyid/faktel/face/FaceDetector {
+	public static final field INPUT_SIZE I
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BLio/github/cybersafetyid/faktel/face/YuNetFaceDetector$Config;Lio/github/cybersafetyid/faktel/core/inference/SessionOptions;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BLio/github/cybersafetyid/faktel/face/YuNetFaceDetector$Config;Lio/github/cybersafetyid/faktel/core/inference/SessionOptions;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun close ()V
+	public fun detect (Lio/github/cybersafetyid/faktel/core/image/RgbImage;)Ljava/util/List;
+}
+
+public final class io/github/cybersafetyid/faktel/face/YuNetFaceDetector$Config {
+	public fun <init> ()V
+	public fun <init> (DDI)V
+	public synthetic fun <init> (DDIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun component3 ()I
+	public final fun copy (DDI)Lio/github/cybersafetyid/faktel/face/YuNetFaceDetector$Config;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/face/YuNetFaceDetector$Config;DDIILjava/lang/Object;)Lio/github/cybersafetyid/faktel/face/YuNetFaceDetector$Config;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMaxFaces ()I
+	public final fun getNmsThreshold ()D
+	public final fun getScoreThreshold ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+

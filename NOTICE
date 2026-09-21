@@ -1,0 +1,14 @@
+Faktel
+Copyright 2026 Cyber Safety ID (https://github.com/cybersafetyid)
+
+This product includes third-party model weights, each under its own licence:
+
+- YuNet face detector (face_detection_yunet_2023mar.onnx) - MIT License
+  https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet
+  Copyright (c) Shiqi Yu et al. (libfacedetection)
+
+- MiniFASNetV2 anti-spoofing (minifasnet_v2.onnx) - Apache License 2.0
+  ONNX export: https://github.com/yakhyo/face-anti-spoofing
+  Original model: https://github.com/minivision-ai/Silent-Face-Anti-Spoofing (Minivision)
+
+See models/MODELS.md for details, checksums and the licence caveats of models you may choose to add.

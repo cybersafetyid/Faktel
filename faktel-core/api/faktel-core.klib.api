@@ -1,0 +1,261 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <faktel-root:faktel-core>
+final enum class io.github.cybersafetyid.faktel.core.inference/ChannelOrder : kotlin/Enum<io.github.cybersafetyid.faktel.core.inference/ChannelOrder> { // io.github.cybersafetyid.faktel.core.inference/ChannelOrder|null[0]
+    enum entry BGR // io.github.cybersafetyid.faktel.core.inference/ChannelOrder.BGR|null[0]
+    enum entry RGB // io.github.cybersafetyid.faktel.core.inference/ChannelOrder.RGB|null[0]
+
+    final val entries // io.github.cybersafetyid.faktel.core.inference/ChannelOrder.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<io.github.cybersafetyid.faktel.core.inference/ChannelOrder> // io.github.cybersafetyid.faktel.core.inference/ChannelOrder.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): io.github.cybersafetyid.faktel.core.inference/ChannelOrder // io.github.cybersafetyid.faktel.core.inference/ChannelOrder.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<io.github.cybersafetyid.faktel.core.inference/ChannelOrder> // io.github.cybersafetyid.faktel.core.inference/ChannelOrder.values|values#static(){}[0]
+}
+
+abstract interface io.github.cybersafetyid.faktel.core.inference/InferenceEngine { // io.github.cybersafetyid.faktel.core.inference/InferenceEngine|null[0]
+    abstract fun createSession(kotlin/ByteArray, io.github.cybersafetyid.faktel.core.inference/SessionOptions = ...): io.github.cybersafetyid.faktel.core.inference/InferenceSession // io.github.cybersafetyid.faktel.core.inference/InferenceEngine.createSession|createSession(kotlin.ByteArray;io.github.cybersafetyid.faktel.core.inference.SessionOptions){}[0]
+}
+
+abstract interface io.github.cybersafetyid.faktel.core.inference/InferenceSession : kotlin/AutoCloseable { // io.github.cybersafetyid.faktel.core.inference/InferenceSession|null[0]
+    abstract val inputNames // io.github.cybersafetyid.faktel.core.inference/InferenceSession.inputNames|{}inputNames[0]
+        abstract fun <get-inputNames>(): kotlin.collections/List<kotlin/String> // io.github.cybersafetyid.faktel.core.inference/InferenceSession.inputNames.<get-inputNames>|<get-inputNames>(){}[0]
+    abstract val outputNames // io.github.cybersafetyid.faktel.core.inference/InferenceSession.outputNames|{}outputNames[0]
+        abstract fun <get-outputNames>(): kotlin.collections/List<kotlin/String> // io.github.cybersafetyid.faktel.core.inference/InferenceSession.outputNames.<get-outputNames>|<get-outputNames>(){}[0]
+
+    abstract fun run(kotlin.collections/Map<kotlin/String, io.github.cybersafetyid.faktel.core.inference/Tensor>): kotlin.collections/Map<kotlin/String, io.github.cybersafetyid.faktel.core.inference/Tensor> // io.github.cybersafetyid.faktel.core.inference/InferenceSession.run|run(kotlin.collections.Map<kotlin.String,io.github.cybersafetyid.faktel.core.inference.Tensor>){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.core.geometry/Homography { // io.github.cybersafetyid.faktel.core.geometry/Homography|null[0]
+    final fun map(kotlin/Double, kotlin/Double): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Homography.map|map(kotlin.Double;kotlin.Double){}[0]
+
+    final object Companion { // io.github.cybersafetyid.faktel.core.geometry/Homography.Companion|null[0]
+        final fun fromCorrespondences(kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point>, kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point>): io.github.cybersafetyid.faktel.core.geometry/Homography // io.github.cybersafetyid.faktel.core.geometry/Homography.Companion.fromCorrespondences|fromCorrespondences(kotlin.collections.List<io.github.cybersafetyid.faktel.core.geometry.Point>;kotlin.collections.List<io.github.cybersafetyid.faktel.core.geometry.Point>){}[0]
+    }
+}
+
+final class io.github.cybersafetyid.faktel.core.geometry/Point { // io.github.cybersafetyid.faktel.core.geometry/Point|null[0]
+    constructor <init>(kotlin/Double, kotlin/Double) // io.github.cybersafetyid.faktel.core.geometry/Point.<init>|<init>(kotlin.Double;kotlin.Double){}[0]
+
+    final val x // io.github.cybersafetyid.faktel.core.geometry/Point.x|{}x[0]
+        final fun <get-x>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Point.x.<get-x>|<get-x>(){}[0]
+    final val y // io.github.cybersafetyid.faktel.core.geometry/Point.y|{}y[0]
+        final fun <get-y>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Point.y.<get-y>|<get-y>(){}[0]
+
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Point.component1|component1(){}[0]
+    final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Point.component2|component2(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Point.copy|copy(kotlin.Double;kotlin.Double){}[0]
+    final fun distanceTo(io.github.cybersafetyid.faktel.core.geometry/Point): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Point.distanceTo|distanceTo(io.github.cybersafetyid.faktel.core.geometry.Point){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.core.geometry/Point.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.core.geometry/Point.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.core.geometry/Point.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.core.geometry/Quad { // io.github.cybersafetyid.faktel.core.geometry/Quad|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point) // io.github.cybersafetyid.faktel.core.geometry/Quad.<init>|<init>(io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point){}[0]
+
+    final val area // io.github.cybersafetyid.faktel.core.geometry/Quad.area|{}area[0]
+        final fun <get-area>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Quad.area.<get-area>|<get-area>(){}[0]
+    final val aspectRatio // io.github.cybersafetyid.faktel.core.geometry/Quad.aspectRatio|{}aspectRatio[0]
+        final fun <get-aspectRatio>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Quad.aspectRatio.<get-aspectRatio>|<get-aspectRatio>(){}[0]
+    final val bottomEdge // io.github.cybersafetyid.faktel.core.geometry/Quad.bottomEdge|{}bottomEdge[0]
+        final fun <get-bottomEdge>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Quad.bottomEdge.<get-bottomEdge>|<get-bottomEdge>(){}[0]
+    final val bottomLeft // io.github.cybersafetyid.faktel.core.geometry/Quad.bottomLeft|{}bottomLeft[0]
+        final fun <get-bottomLeft>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.bottomLeft.<get-bottomLeft>|<get-bottomLeft>(){}[0]
+    final val bottomRight // io.github.cybersafetyid.faktel.core.geometry/Quad.bottomRight|{}bottomRight[0]
+        final fun <get-bottomRight>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.bottomRight.<get-bottomRight>|<get-bottomRight>(){}[0]
+    final val corners // io.github.cybersafetyid.faktel.core.geometry/Quad.corners|{}corners[0]
+        final fun <get-corners>(): kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point> // io.github.cybersafetyid.faktel.core.geometry/Quad.corners.<get-corners>|<get-corners>(){}[0]
+    final val leftEdge // io.github.cybersafetyid.faktel.core.geometry/Quad.leftEdge|{}leftEdge[0]
+        final fun <get-leftEdge>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Quad.leftEdge.<get-leftEdge>|<get-leftEdge>(){}[0]
+    final val rightEdge // io.github.cybersafetyid.faktel.core.geometry/Quad.rightEdge|{}rightEdge[0]
+        final fun <get-rightEdge>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Quad.rightEdge.<get-rightEdge>|<get-rightEdge>(){}[0]
+    final val topEdge // io.github.cybersafetyid.faktel.core.geometry/Quad.topEdge|{}topEdge[0]
+        final fun <get-topEdge>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Quad.topEdge.<get-topEdge>|<get-topEdge>(){}[0]
+    final val topLeft // io.github.cybersafetyid.faktel.core.geometry/Quad.topLeft|{}topLeft[0]
+        final fun <get-topLeft>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.topLeft.<get-topLeft>|<get-topLeft>(){}[0]
+    final val topRight // io.github.cybersafetyid.faktel.core.geometry/Quad.topRight|{}topRight[0]
+        final fun <get-topRight>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.topRight.<get-topRight>|<get-topRight>(){}[0]
+
+    final fun component1(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.component1|component1(){}[0]
+    final fun component2(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.component2|component2(){}[0]
+    final fun component3(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.component3|component3(){}[0]
+    final fun component4(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/Quad.component4|component4(){}[0]
+    final fun copy(io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ...): io.github.cybersafetyid.faktel.core.geometry/Quad // io.github.cybersafetyid.faktel.core.geometry/Quad.copy|copy(io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.core.geometry/Quad.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.core.geometry/Quad.hashCode|hashCode(){}[0]
+    final fun rotated(kotlin/Int): io.github.cybersafetyid.faktel.core.geometry/Quad // io.github.cybersafetyid.faktel.core.geometry/Quad.rotated|rotated(kotlin.Int){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.core.geometry/Quad.toString|toString(){}[0]
+
+    final object Companion { // io.github.cybersafetyid.faktel.core.geometry/Quad.Companion|null[0]
+        final fun fromUnordered(kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point>): io.github.cybersafetyid.faktel.core.geometry/Quad // io.github.cybersafetyid.faktel.core.geometry/Quad.Companion.fromUnordered|fromUnordered(kotlin.collections.List<io.github.cybersafetyid.faktel.core.geometry.Point>){}[0]
+    }
+}
+
+final class io.github.cybersafetyid.faktel.core.geometry/Rect { // io.github.cybersafetyid.faktel.core.geometry/Rect|null[0]
+    constructor <init>(kotlin/Double, kotlin/Double, kotlin/Double, kotlin/Double) // io.github.cybersafetyid.faktel.core.geometry/Rect.<init>|<init>(kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+
+    final val area // io.github.cybersafetyid.faktel.core.geometry/Rect.area|{}area[0]
+        final fun <get-area>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.area.<get-area>|<get-area>(){}[0]
+    final val bottom // io.github.cybersafetyid.faktel.core.geometry/Rect.bottom|{}bottom[0]
+        final fun <get-bottom>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.bottom.<get-bottom>|<get-bottom>(){}[0]
+    final val centerX // io.github.cybersafetyid.faktel.core.geometry/Rect.centerX|{}centerX[0]
+        final fun <get-centerX>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.centerX.<get-centerX>|<get-centerX>(){}[0]
+    final val centerY // io.github.cybersafetyid.faktel.core.geometry/Rect.centerY|{}centerY[0]
+        final fun <get-centerY>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.centerY.<get-centerY>|<get-centerY>(){}[0]
+    final val height // io.github.cybersafetyid.faktel.core.geometry/Rect.height|{}height[0]
+        final fun <get-height>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.height.<get-height>|<get-height>(){}[0]
+    final val left // io.github.cybersafetyid.faktel.core.geometry/Rect.left|{}left[0]
+        final fun <get-left>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.left.<get-left>|<get-left>(){}[0]
+    final val right // io.github.cybersafetyid.faktel.core.geometry/Rect.right|{}right[0]
+        final fun <get-right>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.right.<get-right>|<get-right>(){}[0]
+    final val top // io.github.cybersafetyid.faktel.core.geometry/Rect.top|{}top[0]
+        final fun <get-top>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.top.<get-top>|<get-top>(){}[0]
+    final val width // io.github.cybersafetyid.faktel.core.geometry/Rect.width|{}width[0]
+        final fun <get-width>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.width.<get-width>|<get-width>(){}[0]
+
+    final fun clampTo(kotlin/Int, kotlin/Int): io.github.cybersafetyid.faktel.core.geometry/Rect // io.github.cybersafetyid.faktel.core.geometry/Rect.clampTo|clampTo(kotlin.Int;kotlin.Int){}[0]
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.component1|component1(){}[0]
+    final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.component2|component2(){}[0]
+    final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.component3|component3(){}[0]
+    final fun component4(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.component4|component4(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.core.geometry/Rect // io.github.cybersafetyid.faktel.core.geometry/Rect.copy|copy(kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.core.geometry/Rect.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.core.geometry/Rect.hashCode|hashCode(){}[0]
+    final fun iou(io.github.cybersafetyid.faktel.core.geometry/Rect): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/Rect.iou|iou(io.github.cybersafetyid.faktel.core.geometry.Rect){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.core.geometry/Rect.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform { // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform|null[0]
+    final val a // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.a|{}a[0]
+        final fun <get-a>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.a.<get-a>|<get-a>(){}[0]
+    final val b // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.b|{}b[0]
+        final fun <get-b>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.b.<get-b>|<get-b>(){}[0]
+    final val tx // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.tx|{}tx[0]
+        final fun <get-tx>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.tx.<get-tx>|<get-tx>(){}[0]
+    final val ty // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.ty|{}ty[0]
+        final fun <get-ty>(): kotlin/Double // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.ty.<get-ty>|<get-ty>(){}[0]
+
+    final fun inverse(): io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.inverse|inverse(){}[0]
+    final fun map(kotlin/Double, kotlin/Double): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.map|map(kotlin.Double;kotlin.Double){}[0]
+
+    final object Companion { // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.Companion|null[0]
+        final fun estimate(kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point>, kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point>): io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform // io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform.Companion.estimate|estimate(kotlin.collections.List<io.github.cybersafetyid.faktel.core.geometry.Point>;kotlin.collections.List<io.github.cybersafetyid.faktel.core.geometry.Point>){}[0]
+    }
+}
+
+final class io.github.cybersafetyid.faktel.core.image/GrayImage { // io.github.cybersafetyid.faktel.core.image/GrayImage|null[0]
+    constructor <init>(kotlin/Int, kotlin/Int, kotlin/ByteArray) // io.github.cybersafetyid.faktel.core.image/GrayImage.<init>|<init>(kotlin.Int;kotlin.Int;kotlin.ByteArray){}[0]
+
+    final val data // io.github.cybersafetyid.faktel.core.image/GrayImage.data|{}data[0]
+        final fun <get-data>(): kotlin/ByteArray // io.github.cybersafetyid.faktel.core.image/GrayImage.data.<get-data>|<get-data>(){}[0]
+    final val height // io.github.cybersafetyid.faktel.core.image/GrayImage.height|{}height[0]
+        final fun <get-height>(): kotlin/Int // io.github.cybersafetyid.faktel.core.image/GrayImage.height.<get-height>|<get-height>(){}[0]
+    final val width // io.github.cybersafetyid.faktel.core.image/GrayImage.width|{}width[0]
+        final fun <get-width>(): kotlin/Int // io.github.cybersafetyid.faktel.core.image/GrayImage.width.<get-width>|<get-width>(){}[0]
+
+    final fun get(kotlin/Int, kotlin/Int): kotlin/Int // io.github.cybersafetyid.faktel.core.image/GrayImage.get|get(kotlin.Int;kotlin.Int){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.core.image/RgbImage { // io.github.cybersafetyid.faktel.core.image/RgbImage|null[0]
+    constructor <init>(kotlin/Int, kotlin/Int, kotlin/ByteArray) // io.github.cybersafetyid.faktel.core.image/RgbImage.<init>|<init>(kotlin.Int;kotlin.Int;kotlin.ByteArray){}[0]
+
+    final val data // io.github.cybersafetyid.faktel.core.image/RgbImage.data|{}data[0]
+        final fun <get-data>(): kotlin/ByteArray // io.github.cybersafetyid.faktel.core.image/RgbImage.data.<get-data>|<get-data>(){}[0]
+    final val height // io.github.cybersafetyid.faktel.core.image/RgbImage.height|{}height[0]
+        final fun <get-height>(): kotlin/Int // io.github.cybersafetyid.faktel.core.image/RgbImage.height.<get-height>|<get-height>(){}[0]
+    final val width // io.github.cybersafetyid.faktel.core.image/RgbImage.width|{}width[0]
+        final fun <get-width>(): kotlin/Int // io.github.cybersafetyid.faktel.core.image/RgbImage.width.<get-width>|<get-width>(){}[0]
+
+    final fun b(kotlin/Int, kotlin/Int): kotlin/Int // io.github.cybersafetyid.faktel.core.image/RgbImage.b|b(kotlin.Int;kotlin.Int){}[0]
+    final fun crop(io.github.cybersafetyid.faktel.core.geometry/Rect): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.crop|crop(io.github.cybersafetyid.faktel.core.geometry.Rect){}[0]
+    final fun flipHorizontal(): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.flipHorizontal|flipHorizontal(){}[0]
+    final fun g(kotlin/Int, kotlin/Int): kotlin/Int // io.github.cybersafetyid.faktel.core.image/RgbImage.g|g(kotlin.Int;kotlin.Int){}[0]
+    final fun r(kotlin/Int, kotlin/Int): kotlin/Int // io.github.cybersafetyid.faktel.core.image/RgbImage.r|r(kotlin.Int;kotlin.Int){}[0]
+    final fun resize(kotlin/Int, kotlin/Int): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.resize|resize(kotlin.Int;kotlin.Int){}[0]
+    final fun rotate(kotlin/Int): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.rotate|rotate(kotlin.Int){}[0]
+    final fun toGray(): io.github.cybersafetyid.faktel.core.image/GrayImage // io.github.cybersafetyid.faktel.core.image/RgbImage.toGray|toGray(){}[0]
+
+    final object Companion { // io.github.cybersafetyid.faktel.core.image/RgbImage.Companion|null[0]
+        final fun fromBgra(kotlin/Int, kotlin/Int, kotlin/ByteArray, kotlin/Int = ...): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.Companion.fromBgra|fromBgra(kotlin.Int;kotlin.Int;kotlin.ByteArray;kotlin.Int){}[0]
+        final fun fromNv21(kotlin/Int, kotlin/Int, kotlin/ByteArray): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.Companion.fromNv21|fromNv21(kotlin.Int;kotlin.Int;kotlin.ByteArray){}[0]
+        final fun fromRgba(kotlin/Int, kotlin/Int, kotlin/ByteArray, kotlin/Int = ...): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.Companion.fromRgba|fromRgba(kotlin.Int;kotlin.Int;kotlin.ByteArray;kotlin.Int){}[0]
+        final fun fromYuv420(kotlin/Int, kotlin/Int, kotlin/ByteArray, kotlin/Int, kotlin/ByteArray, kotlin/ByteArray, kotlin/Int, kotlin/Int, kotlin/Int = ..., kotlin/Int = ...): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/RgbImage.Companion.fromYuv420|fromYuv420(kotlin.Int;kotlin.Int;kotlin.ByteArray;kotlin.Int;kotlin.ByteArray;kotlin.ByteArray;kotlin.Int;kotlin.Int;kotlin.Int;kotlin.Int){}[0]
+    }
+}
+
+final class io.github.cybersafetyid.faktel.core.inference/Letterbox { // io.github.cybersafetyid.faktel.core.inference/Letterbox|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.image/RgbImage, kotlin/Double, kotlin/Int, kotlin/Int) // io.github.cybersafetyid.faktel.core.inference/Letterbox.<init>|<init>(io.github.cybersafetyid.faktel.core.image.RgbImage;kotlin.Double;kotlin.Int;kotlin.Int){}[0]
+
+    final val image // io.github.cybersafetyid.faktel.core.inference/Letterbox.image|{}image[0]
+        final fun <get-image>(): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.inference/Letterbox.image.<get-image>|<get-image>(){}[0]
+    final val padX // io.github.cybersafetyid.faktel.core.inference/Letterbox.padX|{}padX[0]
+        final fun <get-padX>(): kotlin/Int // io.github.cybersafetyid.faktel.core.inference/Letterbox.padX.<get-padX>|<get-padX>(){}[0]
+    final val padY // io.github.cybersafetyid.faktel.core.inference/Letterbox.padY|{}padY[0]
+        final fun <get-padY>(): kotlin/Int // io.github.cybersafetyid.faktel.core.inference/Letterbox.padY.<get-padY>|<get-padY>(){}[0]
+    final val scale // io.github.cybersafetyid.faktel.core.inference/Letterbox.scale|{}scale[0]
+        final fun <get-scale>(): kotlin/Double // io.github.cybersafetyid.faktel.core.inference/Letterbox.scale.<get-scale>|<get-scale>(){}[0]
+
+    final fun toSourceX(kotlin/Double): kotlin/Double // io.github.cybersafetyid.faktel.core.inference/Letterbox.toSourceX|toSourceX(kotlin.Double){}[0]
+    final fun toSourceY(kotlin/Double): kotlin/Double // io.github.cybersafetyid.faktel.core.inference/Letterbox.toSourceY|toSourceY(kotlin.Double){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.core.inference/SessionOptions { // io.github.cybersafetyid.faktel.core.inference/SessionOptions|null[0]
+    constructor <init>(kotlin/Int = ...) // io.github.cybersafetyid.faktel.core.inference/SessionOptions.<init>|<init>(kotlin.Int){}[0]
+
+    final val numThreads // io.github.cybersafetyid.faktel.core.inference/SessionOptions.numThreads|{}numThreads[0]
+        final fun <get-numThreads>(): kotlin/Int // io.github.cybersafetyid.faktel.core.inference/SessionOptions.numThreads.<get-numThreads>|<get-numThreads>(){}[0]
+
+    final fun component1(): kotlin/Int // io.github.cybersafetyid.faktel.core.inference/SessionOptions.component1|component1(){}[0]
+    final fun copy(kotlin/Int = ...): io.github.cybersafetyid.faktel.core.inference/SessionOptions // io.github.cybersafetyid.faktel.core.inference/SessionOptions.copy|copy(kotlin.Int){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.core.inference/SessionOptions.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.core.inference/SessionOptions.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.core.inference/SessionOptions.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.core.inference/Tensor { // io.github.cybersafetyid.faktel.core.inference/Tensor|null[0]
+    constructor <init>(kotlin/IntArray, kotlin/FloatArray) // io.github.cybersafetyid.faktel.core.inference/Tensor.<init>|<init>(kotlin.IntArray;kotlin.FloatArray){}[0]
+
+    final val data // io.github.cybersafetyid.faktel.core.inference/Tensor.data|{}data[0]
+        final fun <get-data>(): kotlin/FloatArray // io.github.cybersafetyid.faktel.core.inference/Tensor.data.<get-data>|<get-data>(){}[0]
+    final val shape // io.github.cybersafetyid.faktel.core.inference/Tensor.shape|{}shape[0]
+        final fun <get-shape>(): kotlin/IntArray // io.github.cybersafetyid.faktel.core.inference/Tensor.shape.<get-shape>|<get-shape>(){}[0]
+
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.core.inference/Tensor.toString|toString(){}[0]
+}
+
+sealed class io.github.cybersafetyid.faktel.core/FaktelException : kotlin/RuntimeException { // io.github.cybersafetyid.faktel.core/FaktelException|null[0]
+    final class Inference : io.github.cybersafetyid.faktel.core/FaktelException { // io.github.cybersafetyid.faktel.core/FaktelException.Inference|null[0]
+        constructor <init>(kotlin/String, kotlin/Throwable? = ...) // io.github.cybersafetyid.faktel.core/FaktelException.Inference.<init>|<init>(kotlin.String;kotlin.Throwable?){}[0]
+    }
+
+    final class InvalidImage : io.github.cybersafetyid.faktel.core/FaktelException { // io.github.cybersafetyid.faktel.core/FaktelException.InvalidImage|null[0]
+        constructor <init>(kotlin/String, kotlin/Throwable? = ...) // io.github.cybersafetyid.faktel.core/FaktelException.InvalidImage.<init>|<init>(kotlin.String;kotlin.Throwable?){}[0]
+    }
+
+    final class ModelLoad : io.github.cybersafetyid.faktel.core/FaktelException { // io.github.cybersafetyid.faktel.core/FaktelException.ModelLoad|null[0]
+        constructor <init>(kotlin/String, kotlin/Throwable? = ...) // io.github.cybersafetyid.faktel.core/FaktelException.ModelLoad.<init>|<init>(kotlin.String;kotlin.Throwable?){}[0]
+    }
+}
+
+final object io.github.cybersafetyid.faktel.core.image/ImageDecoder { // io.github.cybersafetyid.faktel.core.image/ImageDecoder|null[0]
+    final fun decode(kotlin/ByteArray): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/ImageDecoder.decode|decode(kotlin.ByteArray){}[0]
+}
+
+final fun (io.github.cybersafetyid.faktel.core.image/GrayImage).io.github.cybersafetyid.faktel.core.quality/laplacianVariance(): kotlin/Double // io.github.cybersafetyid.faktel.core.quality/laplacianVariance|laplacianVariance@io.github.cybersafetyid.faktel.core.image.GrayImage(){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/GrayImage).io.github.cybersafetyid.faktel.core.quality/meanBrightness(): kotlin/Double // io.github.cybersafetyid.faktel.core.quality/meanBrightness|meanBrightness@io.github.cybersafetyid.faktel.core.image.GrayImage(){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/RgbImage).io.github.cybersafetyid.faktel.core.image/warpPerspective(io.github.cybersafetyid.faktel.core.geometry/Quad, kotlin/Int, kotlin/Int): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/warpPerspective|warpPerspective@io.github.cybersafetyid.faktel.core.image.RgbImage(io.github.cybersafetyid.faktel.core.geometry.Quad;kotlin.Int;kotlin.Int){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/RgbImage).io.github.cybersafetyid.faktel.core.image/warpSimilarity(io.github.cybersafetyid.faktel.core.geometry/SimilarityTransform, kotlin/Int, kotlin/Int): io.github.cybersafetyid.faktel.core.image/RgbImage // io.github.cybersafetyid.faktel.core.image/warpSimilarity|warpSimilarity@io.github.cybersafetyid.faktel.core.image.RgbImage(io.github.cybersafetyid.faktel.core.geometry.SimilarityTransform;kotlin.Int;kotlin.Int){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/RgbImage).io.github.cybersafetyid.faktel.core.inference/letterbox(kotlin/Int, kotlin/Int = ...): io.github.cybersafetyid.faktel.core.inference/Letterbox // io.github.cybersafetyid.faktel.core.inference/letterbox|letterbox@io.github.cybersafetyid.faktel.core.image.RgbImage(kotlin.Int;kotlin.Int){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/RgbImage).io.github.cybersafetyid.faktel.core.inference/toTensor(io.github.cybersafetyid.faktel.core.inference/ChannelOrder, kotlin/Float = ..., kotlin/Float = ...): io.github.cybersafetyid.faktel.core.inference/Tensor // io.github.cybersafetyid.faktel.core.inference/toTensor|toTensor@io.github.cybersafetyid.faktel.core.image.RgbImage(io.github.cybersafetyid.faktel.core.inference.ChannelOrder;kotlin.Float;kotlin.Float){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/RgbImage).io.github.cybersafetyid.faktel.core.quality/blurScore(kotlin/Int = ...): kotlin/Double // io.github.cybersafetyid.faktel.core.quality/blurScore|blurScore@io.github.cybersafetyid.faktel.core.image.RgbImage(kotlin.Int){}[0]
+final fun (io.github.cybersafetyid.faktel.core.image/RgbImage).io.github.cybersafetyid.faktel.core.quality/saturatedRatio(kotlin/Int = ...): kotlin/Double // io.github.cybersafetyid.faktel.core.quality/saturatedRatio|saturatedRatio@io.github.cybersafetyid.faktel.core.image.RgbImage(kotlin.Int){}[0]
+final fun (io.github.cybersafetyid.faktel.core.inference/Tensor).io.github.cybersafetyid.faktel.core.inference/toNSData(): platform.Foundation/NSData // io.github.cybersafetyid.faktel.core.inference/toNSData|toNSData@io.github.cybersafetyid.faktel.core.inference.Tensor(){}[0]
+final fun (kotlin/ByteArray).io.github.cybersafetyid.faktel.core.inference/toNSData(): platform.Foundation/NSData // io.github.cybersafetyid.faktel.core.inference/toNSData|toNSData@kotlin.ByteArray(){}[0]
+final fun (platform.Foundation/NSData).io.github.cybersafetyid.faktel.core.inference/toByteArray(): kotlin/ByteArray // io.github.cybersafetyid.faktel.core.inference/toByteArray|toByteArray@platform.Foundation.NSData(){}[0]
+final fun io.github.cybersafetyid.faktel.core.inference/readBundleModel(kotlin/String, kotlin/String, platform.Foundation/NSBundle = ...): kotlin/ByteArray // io.github.cybersafetyid.faktel.core.inference/readBundleModel|readBundleModel(kotlin.String;kotlin.String;platform.Foundation.NSBundle){}[0]
+final fun io.github.cybersafetyid.faktel.core.inference/tensorFromNSData(kotlin.collections/List<kotlin/Int>, platform.Foundation/NSData): io.github.cybersafetyid.faktel.core.inference/Tensor // io.github.cybersafetyid.faktel.core.inference/tensorFromNSData|tensorFromNSData(kotlin.collections.List<kotlin.Int>;platform.Foundation.NSData){}[0]

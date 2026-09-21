@@ -1,0 +1,290 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <faktel-root:faktel-face>
+final enum class io.github.cybersafetyid.faktel.face/FaceIssue : kotlin/Enum<io.github.cybersafetyid.faktel.face/FaceIssue> { // io.github.cybersafetyid.faktel.face/FaceIssue|null[0]
+    enum entry BLURRY // io.github.cybersafetyid.faktel.face/FaceIssue.BLURRY|null[0]
+    enum entry FACE_ANGLE // io.github.cybersafetyid.faktel.face/FaceIssue.FACE_ANGLE|null[0]
+    enum entry FACE_CUT_OFF // io.github.cybersafetyid.faktel.face/FaceIssue.FACE_CUT_OFF|null[0]
+    enum entry MULTIPLE_FACES // io.github.cybersafetyid.faktel.face/FaceIssue.MULTIPLE_FACES|null[0]
+    enum entry NO_FACE // io.github.cybersafetyid.faktel.face/FaceIssue.NO_FACE|null[0]
+    enum entry TOO_BRIGHT // io.github.cybersafetyid.faktel.face/FaceIssue.TOO_BRIGHT|null[0]
+    enum entry TOO_DARK // io.github.cybersafetyid.faktel.face/FaceIssue.TOO_DARK|null[0]
+    enum entry TOO_SMALL // io.github.cybersafetyid.faktel.face/FaceIssue.TOO_SMALL|null[0]
+
+    final val entries // io.github.cybersafetyid.faktel.face/FaceIssue.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<io.github.cybersafetyid.faktel.face/FaceIssue> // io.github.cybersafetyid.faktel.face/FaceIssue.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): io.github.cybersafetyid.faktel.face/FaceIssue // io.github.cybersafetyid.faktel.face/FaceIssue.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<io.github.cybersafetyid.faktel.face/FaceIssue> // io.github.cybersafetyid.faktel.face/FaceIssue.values|values#static(){}[0]
+}
+
+abstract interface io.github.cybersafetyid.faktel.face/FaceDetector : kotlin/AutoCloseable { // io.github.cybersafetyid.faktel.face/FaceDetector|null[0]
+    abstract fun detect(io.github.cybersafetyid.faktel.core.image/RgbImage): kotlin.collections/List<io.github.cybersafetyid.faktel.face/Face> // io.github.cybersafetyid.faktel.face/FaceDetector.detect|detect(io.github.cybersafetyid.faktel.core.image.RgbImage){}[0]
+}
+
+abstract interface io.github.cybersafetyid.faktel.face/FaceEmbedder : kotlin/AutoCloseable { // io.github.cybersafetyid.faktel.face/FaceEmbedder|null[0]
+    abstract fun embed(io.github.cybersafetyid.faktel.core.image/RgbImage, io.github.cybersafetyid.faktel.face/Face): io.github.cybersafetyid.faktel.face/FaceEmbedding // io.github.cybersafetyid.faktel.face/FaceEmbedder.embed|embed(io.github.cybersafetyid.faktel.core.image.RgbImage;io.github.cybersafetyid.faktel.face.Face){}[0]
+}
+
+abstract interface io.github.cybersafetyid.faktel.face/LivenessDetector : kotlin/AutoCloseable { // io.github.cybersafetyid.faktel.face/LivenessDetector|null[0]
+    abstract fun assess(io.github.cybersafetyid.faktel.core.image/RgbImage, io.github.cybersafetyid.faktel.face/Face): io.github.cybersafetyid.faktel.face/LivenessResult // io.github.cybersafetyid.faktel.face/LivenessDetector.assess|assess(io.github.cybersafetyid.faktel.core.image.RgbImage;io.github.cybersafetyid.faktel.face.Face){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/ArcFaceEmbedder : io.github.cybersafetyid.faktel.face/FaceEmbedder { // io.github.cybersafetyid.faktel.face/ArcFaceEmbedder|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.inference/InferenceEngine, kotlin/ByteArray, io.github.cybersafetyid.faktel.core.inference/SessionOptions = ...) // io.github.cybersafetyid.faktel.face/ArcFaceEmbedder.<init>|<init>(io.github.cybersafetyid.faktel.core.inference.InferenceEngine;kotlin.ByteArray;io.github.cybersafetyid.faktel.core.inference.SessionOptions){}[0]
+
+    final fun close() // io.github.cybersafetyid.faktel.face/ArcFaceEmbedder.close|close(){}[0]
+    final fun embed(io.github.cybersafetyid.faktel.core.image/RgbImage, io.github.cybersafetyid.faktel.face/Face): io.github.cybersafetyid.faktel.face/FaceEmbedding // io.github.cybersafetyid.faktel.face/ArcFaceEmbedder.embed|embed(io.github.cybersafetyid.faktel.core.image.RgbImage;io.github.cybersafetyid.faktel.face.Face){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/Face { // io.github.cybersafetyid.faktel.face/Face|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.geometry/Rect, io.github.cybersafetyid.faktel.face/FaceLandmarks, kotlin/Double) // io.github.cybersafetyid.faktel.face/Face.<init>|<init>(io.github.cybersafetyid.faktel.core.geometry.Rect;io.github.cybersafetyid.faktel.face.FaceLandmarks;kotlin.Double){}[0]
+
+    final val box // io.github.cybersafetyid.faktel.face/Face.box|{}box[0]
+        final fun <get-box>(): io.github.cybersafetyid.faktel.core.geometry/Rect // io.github.cybersafetyid.faktel.face/Face.box.<get-box>|<get-box>(){}[0]
+    final val landmarks // io.github.cybersafetyid.faktel.face/Face.landmarks|{}landmarks[0]
+        final fun <get-landmarks>(): io.github.cybersafetyid.faktel.face/FaceLandmarks // io.github.cybersafetyid.faktel.face/Face.landmarks.<get-landmarks>|<get-landmarks>(){}[0]
+    final val score // io.github.cybersafetyid.faktel.face/Face.score|{}score[0]
+        final fun <get-score>(): kotlin/Double // io.github.cybersafetyid.faktel.face/Face.score.<get-score>|<get-score>(){}[0]
+
+    final fun component1(): io.github.cybersafetyid.faktel.core.geometry/Rect // io.github.cybersafetyid.faktel.face/Face.component1|component1(){}[0]
+    final fun component2(): io.github.cybersafetyid.faktel.face/FaceLandmarks // io.github.cybersafetyid.faktel.face/Face.component2|component2(){}[0]
+    final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.face/Face.component3|component3(){}[0]
+    final fun copy(io.github.cybersafetyid.faktel.core.geometry/Rect = ..., io.github.cybersafetyid.faktel.face/FaceLandmarks = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.face/Face // io.github.cybersafetyid.faktel.face/Face.copy|copy(io.github.cybersafetyid.faktel.core.geometry.Rect;io.github.cybersafetyid.faktel.face.FaceLandmarks;kotlin.Double){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/Face.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/Face.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/Face.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceAnalysis { // io.github.cybersafetyid.faktel.face/FaceAnalysis|null[0]
+    constructor <init>(kotlin.collections/List<io.github.cybersafetyid.faktel.face/Face>, io.github.cybersafetyid.faktel.face/Face?, io.github.cybersafetyid.faktel.face/FaceQualityReport?, io.github.cybersafetyid.faktel.face/LivenessResult?, kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue>) // io.github.cybersafetyid.faktel.face/FaceAnalysis.<init>|<init>(kotlin.collections.List<io.github.cybersafetyid.faktel.face.Face>;io.github.cybersafetyid.faktel.face.Face?;io.github.cybersafetyid.faktel.face.FaceQualityReport?;io.github.cybersafetyid.faktel.face.LivenessResult?;kotlin.collections.List<io.github.cybersafetyid.faktel.face.FaceIssue>){}[0]
+
+    final val face // io.github.cybersafetyid.faktel.face/FaceAnalysis.face|{}face[0]
+        final fun <get-face>(): io.github.cybersafetyid.faktel.face/Face? // io.github.cybersafetyid.faktel.face/FaceAnalysis.face.<get-face>|<get-face>(){}[0]
+    final val faces // io.github.cybersafetyid.faktel.face/FaceAnalysis.faces|{}faces[0]
+        final fun <get-faces>(): kotlin.collections/List<io.github.cybersafetyid.faktel.face/Face> // io.github.cybersafetyid.faktel.face/FaceAnalysis.faces.<get-faces>|<get-faces>(){}[0]
+    final val isAcceptable // io.github.cybersafetyid.faktel.face/FaceAnalysis.isAcceptable|{}isAcceptable[0]
+        final fun <get-isAcceptable>(): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceAnalysis.isAcceptable.<get-isAcceptable>|<get-isAcceptable>(){}[0]
+    final val issues // io.github.cybersafetyid.faktel.face/FaceAnalysis.issues|{}issues[0]
+        final fun <get-issues>(): kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue> // io.github.cybersafetyid.faktel.face/FaceAnalysis.issues.<get-issues>|<get-issues>(){}[0]
+    final val liveness // io.github.cybersafetyid.faktel.face/FaceAnalysis.liveness|{}liveness[0]
+        final fun <get-liveness>(): io.github.cybersafetyid.faktel.face/LivenessResult? // io.github.cybersafetyid.faktel.face/FaceAnalysis.liveness.<get-liveness>|<get-liveness>(){}[0]
+    final val quality // io.github.cybersafetyid.faktel.face/FaceAnalysis.quality|{}quality[0]
+        final fun <get-quality>(): io.github.cybersafetyid.faktel.face/FaceQualityReport? // io.github.cybersafetyid.faktel.face/FaceAnalysis.quality.<get-quality>|<get-quality>(){}[0]
+
+    final fun component1(): kotlin.collections/List<io.github.cybersafetyid.faktel.face/Face> // io.github.cybersafetyid.faktel.face/FaceAnalysis.component1|component1(){}[0]
+    final fun component2(): io.github.cybersafetyid.faktel.face/Face? // io.github.cybersafetyid.faktel.face/FaceAnalysis.component2|component2(){}[0]
+    final fun component3(): io.github.cybersafetyid.faktel.face/FaceQualityReport? // io.github.cybersafetyid.faktel.face/FaceAnalysis.component3|component3(){}[0]
+    final fun component4(): io.github.cybersafetyid.faktel.face/LivenessResult? // io.github.cybersafetyid.faktel.face/FaceAnalysis.component4|component4(){}[0]
+    final fun component5(): kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue> // io.github.cybersafetyid.faktel.face/FaceAnalysis.component5|component5(){}[0]
+    final fun copy(kotlin.collections/List<io.github.cybersafetyid.faktel.face/Face> = ..., io.github.cybersafetyid.faktel.face/Face? = ..., io.github.cybersafetyid.faktel.face/FaceQualityReport? = ..., io.github.cybersafetyid.faktel.face/LivenessResult? = ..., kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue> = ...): io.github.cybersafetyid.faktel.face/FaceAnalysis // io.github.cybersafetyid.faktel.face/FaceAnalysis.copy|copy(kotlin.collections.List<io.github.cybersafetyid.faktel.face.Face>;io.github.cybersafetyid.faktel.face.Face?;io.github.cybersafetyid.faktel.face.FaceQualityReport?;io.github.cybersafetyid.faktel.face.LivenessResult?;kotlin.collections.List<io.github.cybersafetyid.faktel.face.FaceIssue>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceAnalysis.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/FaceAnalysis.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/FaceAnalysis.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceAnalyzer : kotlin/AutoCloseable { // io.github.cybersafetyid.faktel.face/FaceAnalyzer|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.face/FaceDetector, io.github.cybersafetyid.faktel.face/FaceQualityAssessor = ..., io.github.cybersafetyid.faktel.face/LivenessDetector? = ...) // io.github.cybersafetyid.faktel.face/FaceAnalyzer.<init>|<init>(io.github.cybersafetyid.faktel.face.FaceDetector;io.github.cybersafetyid.faktel.face.FaceQualityAssessor;io.github.cybersafetyid.faktel.face.LivenessDetector?){}[0]
+
+    final fun analyze(io.github.cybersafetyid.faktel.core.image/RgbImage): io.github.cybersafetyid.faktel.face/FaceAnalysis // io.github.cybersafetyid.faktel.face/FaceAnalyzer.analyze|analyze(io.github.cybersafetyid.faktel.core.image.RgbImage){}[0]
+    final fun close() // io.github.cybersafetyid.faktel.face/FaceAnalyzer.close|close(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceEmbedding { // io.github.cybersafetyid.faktel.face/FaceEmbedding|null[0]
+    constructor <init>(kotlin/FloatArray) // io.github.cybersafetyid.faktel.face/FaceEmbedding.<init>|<init>(kotlin.FloatArray){}[0]
+
+    final val values // io.github.cybersafetyid.faktel.face/FaceEmbedding.values|{}values[0]
+        final fun <get-values>(): kotlin/FloatArray // io.github.cybersafetyid.faktel.face/FaceEmbedding.values.<get-values>|<get-values>(){}[0]
+
+    final fun cosineSimilarity(io.github.cybersafetyid.faktel.face/FaceEmbedding): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceEmbedding.cosineSimilarity|cosineSimilarity(io.github.cybersafetyid.faktel.face.FaceEmbedding){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceLandmarks { // io.github.cybersafetyid.faktel.face/FaceLandmarks|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point, io.github.cybersafetyid.faktel.core.geometry/Point) // io.github.cybersafetyid.faktel.face/FaceLandmarks.<init>|<init>(io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point){}[0]
+
+    final val leftEye // io.github.cybersafetyid.faktel.face/FaceLandmarks.leftEye|{}leftEye[0]
+        final fun <get-leftEye>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.leftEye.<get-leftEye>|<get-leftEye>(){}[0]
+    final val leftMouth // io.github.cybersafetyid.faktel.face/FaceLandmarks.leftMouth|{}leftMouth[0]
+        final fun <get-leftMouth>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.leftMouth.<get-leftMouth>|<get-leftMouth>(){}[0]
+    final val nose // io.github.cybersafetyid.faktel.face/FaceLandmarks.nose|{}nose[0]
+        final fun <get-nose>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.nose.<get-nose>|<get-nose>(){}[0]
+    final val rightEye // io.github.cybersafetyid.faktel.face/FaceLandmarks.rightEye|{}rightEye[0]
+        final fun <get-rightEye>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.rightEye.<get-rightEye>|<get-rightEye>(){}[0]
+    final val rightMouth // io.github.cybersafetyid.faktel.face/FaceLandmarks.rightMouth|{}rightMouth[0]
+        final fun <get-rightMouth>(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.rightMouth.<get-rightMouth>|<get-rightMouth>(){}[0]
+
+    final fun asList(): kotlin.collections/List<io.github.cybersafetyid.faktel.core.geometry/Point> // io.github.cybersafetyid.faktel.face/FaceLandmarks.asList|asList(){}[0]
+    final fun component1(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.component1|component1(){}[0]
+    final fun component2(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.component2|component2(){}[0]
+    final fun component3(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.component3|component3(){}[0]
+    final fun component4(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.component4|component4(){}[0]
+    final fun component5(): io.github.cybersafetyid.faktel.core.geometry/Point // io.github.cybersafetyid.faktel.face/FaceLandmarks.component5|component5(){}[0]
+    final fun copy(io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ..., io.github.cybersafetyid.faktel.core.geometry/Point = ...): io.github.cybersafetyid.faktel.face/FaceLandmarks // io.github.cybersafetyid.faktel.face/FaceLandmarks.copy|copy(io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point;io.github.cybersafetyid.faktel.core.geometry.Point){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceLandmarks.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/FaceLandmarks.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/FaceLandmarks.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceMatchResult { // io.github.cybersafetyid.faktel.face/FaceMatchResult|null[0]
+    constructor <init>(kotlin/Double, kotlin/Boolean) // io.github.cybersafetyid.faktel.face/FaceMatchResult.<init>|<init>(kotlin.Double;kotlin.Boolean){}[0]
+
+    final val isMatch // io.github.cybersafetyid.faktel.face/FaceMatchResult.isMatch|{}isMatch[0]
+        final fun <get-isMatch>(): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceMatchResult.isMatch.<get-isMatch>|<get-isMatch>(){}[0]
+    final val similarity // io.github.cybersafetyid.faktel.face/FaceMatchResult.similarity|{}similarity[0]
+        final fun <get-similarity>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceMatchResult.similarity.<get-similarity>|<get-similarity>(){}[0]
+
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceMatchResult.component1|component1(){}[0]
+    final fun component2(): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceMatchResult.component2|component2(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Boolean = ...): io.github.cybersafetyid.faktel.face/FaceMatchResult // io.github.cybersafetyid.faktel.face/FaceMatchResult.copy|copy(kotlin.Double;kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceMatchResult.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/FaceMatchResult.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/FaceMatchResult.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceMatcher { // io.github.cybersafetyid.faktel.face/FaceMatcher|null[0]
+    constructor <init>(kotlin/Double = ...) // io.github.cybersafetyid.faktel.face/FaceMatcher.<init>|<init>(kotlin.Double){}[0]
+
+    final val threshold // io.github.cybersafetyid.faktel.face/FaceMatcher.threshold|{}threshold[0]
+        final fun <get-threshold>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceMatcher.threshold.<get-threshold>|<get-threshold>(){}[0]
+
+    final fun compare(io.github.cybersafetyid.faktel.face/FaceEmbedding, io.github.cybersafetyid.faktel.face/FaceEmbedding): io.github.cybersafetyid.faktel.face/FaceMatchResult // io.github.cybersafetyid.faktel.face/FaceMatcher.compare|compare(io.github.cybersafetyid.faktel.face.FaceEmbedding;io.github.cybersafetyid.faktel.face.FaceEmbedding){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceQualityAssessor { // io.github.cybersafetyid.faktel.face/FaceQualityAssessor|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.face/FaceQualityConfig = ...) // io.github.cybersafetyid.faktel.face/FaceQualityAssessor.<init>|<init>(io.github.cybersafetyid.faktel.face.FaceQualityConfig){}[0]
+
+    final fun assess(io.github.cybersafetyid.faktel.core.image/RgbImage, io.github.cybersafetyid.faktel.face/Face): io.github.cybersafetyid.faktel.face/FaceQualityReport // io.github.cybersafetyid.faktel.face/FaceQualityAssessor.assess|assess(io.github.cybersafetyid.faktel.core.image.RgbImage;io.github.cybersafetyid.faktel.face.Face){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceQualityConfig { // io.github.cybersafetyid.faktel.face/FaceQualityConfig|null[0]
+    constructor <init>(kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ...) // io.github.cybersafetyid.faktel.face/FaceQualityConfig.<init>|<init>(kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+
+    final val maxBrightness // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxBrightness|{}maxBrightness[0]
+        final fun <get-maxBrightness>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxBrightness.<get-maxBrightness>|<get-maxBrightness>(){}[0]
+    final val maxPitch // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxPitch|{}maxPitch[0]
+        final fun <get-maxPitch>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxPitch.<get-maxPitch>|<get-maxPitch>(){}[0]
+    final val maxRoll // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxRoll|{}maxRoll[0]
+        final fun <get-maxRoll>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxRoll.<get-maxRoll>|<get-maxRoll>(){}[0]
+    final val maxYaw // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxYaw|{}maxYaw[0]
+        final fun <get-maxYaw>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.maxYaw.<get-maxYaw>|<get-maxYaw>(){}[0]
+    final val minBlurScore // io.github.cybersafetyid.faktel.face/FaceQualityConfig.minBlurScore|{}minBlurScore[0]
+        final fun <get-minBlurScore>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.minBlurScore.<get-minBlurScore>|<get-minBlurScore>(){}[0]
+    final val minBrightness // io.github.cybersafetyid.faktel.face/FaceQualityConfig.minBrightness|{}minBrightness[0]
+        final fun <get-minBrightness>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.minBrightness.<get-minBrightness>|<get-minBrightness>(){}[0]
+    final val minFaceWidthRatio // io.github.cybersafetyid.faktel.face/FaceQualityConfig.minFaceWidthRatio|{}minFaceWidthRatio[0]
+        final fun <get-minFaceWidthRatio>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.minFaceWidthRatio.<get-minFaceWidthRatio>|<get-minFaceWidthRatio>(){}[0]
+
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component1|component1(){}[0]
+    final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component2|component2(){}[0]
+    final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component3|component3(){}[0]
+    final fun component4(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component4|component4(){}[0]
+    final fun component5(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component5|component5(){}[0]
+    final fun component6(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component6|component6(){}[0]
+    final fun component7(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityConfig.component7|component7(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.face/FaceQualityConfig // io.github.cybersafetyid.faktel.face/FaceQualityConfig.copy|copy(kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceQualityConfig.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/FaceQualityConfig.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/FaceQualityConfig.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/FaceQualityReport { // io.github.cybersafetyid.faktel.face/FaceQualityReport|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.face/Face, kotlin/Double, kotlin/Double, io.github.cybersafetyid.faktel.face/HeadPose, kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue>) // io.github.cybersafetyid.faktel.face/FaceQualityReport.<init>|<init>(io.github.cybersafetyid.faktel.face.Face;kotlin.Double;kotlin.Double;io.github.cybersafetyid.faktel.face.HeadPose;kotlin.collections.List<io.github.cybersafetyid.faktel.face.FaceIssue>){}[0]
+
+    final val blurScore // io.github.cybersafetyid.faktel.face/FaceQualityReport.blurScore|{}blurScore[0]
+        final fun <get-blurScore>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityReport.blurScore.<get-blurScore>|<get-blurScore>(){}[0]
+    final val brightness // io.github.cybersafetyid.faktel.face/FaceQualityReport.brightness|{}brightness[0]
+        final fun <get-brightness>(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityReport.brightness.<get-brightness>|<get-brightness>(){}[0]
+    final val face // io.github.cybersafetyid.faktel.face/FaceQualityReport.face|{}face[0]
+        final fun <get-face>(): io.github.cybersafetyid.faktel.face/Face // io.github.cybersafetyid.faktel.face/FaceQualityReport.face.<get-face>|<get-face>(){}[0]
+    final val isAcceptable // io.github.cybersafetyid.faktel.face/FaceQualityReport.isAcceptable|{}isAcceptable[0]
+        final fun <get-isAcceptable>(): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceQualityReport.isAcceptable.<get-isAcceptable>|<get-isAcceptable>(){}[0]
+    final val issues // io.github.cybersafetyid.faktel.face/FaceQualityReport.issues|{}issues[0]
+        final fun <get-issues>(): kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue> // io.github.cybersafetyid.faktel.face/FaceQualityReport.issues.<get-issues>|<get-issues>(){}[0]
+    final val pose // io.github.cybersafetyid.faktel.face/FaceQualityReport.pose|{}pose[0]
+        final fun <get-pose>(): io.github.cybersafetyid.faktel.face/HeadPose // io.github.cybersafetyid.faktel.face/FaceQualityReport.pose.<get-pose>|<get-pose>(){}[0]
+
+    final fun component1(): io.github.cybersafetyid.faktel.face/Face // io.github.cybersafetyid.faktel.face/FaceQualityReport.component1|component1(){}[0]
+    final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityReport.component2|component2(){}[0]
+    final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.face/FaceQualityReport.component3|component3(){}[0]
+    final fun component4(): io.github.cybersafetyid.faktel.face/HeadPose // io.github.cybersafetyid.faktel.face/FaceQualityReport.component4|component4(){}[0]
+    final fun component5(): kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue> // io.github.cybersafetyid.faktel.face/FaceQualityReport.component5|component5(){}[0]
+    final fun copy(io.github.cybersafetyid.faktel.face/Face = ..., kotlin/Double = ..., kotlin/Double = ..., io.github.cybersafetyid.faktel.face/HeadPose = ..., kotlin.collections/List<io.github.cybersafetyid.faktel.face/FaceIssue> = ...): io.github.cybersafetyid.faktel.face/FaceQualityReport // io.github.cybersafetyid.faktel.face/FaceQualityReport.copy|copy(io.github.cybersafetyid.faktel.face.Face;kotlin.Double;kotlin.Double;io.github.cybersafetyid.faktel.face.HeadPose;kotlin.collections.List<io.github.cybersafetyid.faktel.face.FaceIssue>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/FaceQualityReport.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/FaceQualityReport.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/FaceQualityReport.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/HeadPose { // io.github.cybersafetyid.faktel.face/HeadPose|null[0]
+    constructor <init>(kotlin/Double, kotlin/Double, kotlin/Double) // io.github.cybersafetyid.faktel.face/HeadPose.<init>|<init>(kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+
+    final val pitch // io.github.cybersafetyid.faktel.face/HeadPose.pitch|{}pitch[0]
+        final fun <get-pitch>(): kotlin/Double // io.github.cybersafetyid.faktel.face/HeadPose.pitch.<get-pitch>|<get-pitch>(){}[0]
+    final val roll // io.github.cybersafetyid.faktel.face/HeadPose.roll|{}roll[0]
+        final fun <get-roll>(): kotlin/Double // io.github.cybersafetyid.faktel.face/HeadPose.roll.<get-roll>|<get-roll>(){}[0]
+    final val yaw // io.github.cybersafetyid.faktel.face/HeadPose.yaw|{}yaw[0]
+        final fun <get-yaw>(): kotlin/Double // io.github.cybersafetyid.faktel.face/HeadPose.yaw.<get-yaw>|<get-yaw>(){}[0]
+
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.face/HeadPose.component1|component1(){}[0]
+    final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.face/HeadPose.component2|component2(){}[0]
+    final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.face/HeadPose.component3|component3(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Double = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.face/HeadPose // io.github.cybersafetyid.faktel.face/HeadPose.copy|copy(kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/HeadPose.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/HeadPose.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/HeadPose.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/LivenessResult { // io.github.cybersafetyid.faktel.face/LivenessResult|null[0]
+    constructor <init>(kotlin/Double, kotlin/Boolean) // io.github.cybersafetyid.faktel.face/LivenessResult.<init>|<init>(kotlin.Double;kotlin.Boolean){}[0]
+
+    final val isLive // io.github.cybersafetyid.faktel.face/LivenessResult.isLive|{}isLive[0]
+        final fun <get-isLive>(): kotlin/Boolean // io.github.cybersafetyid.faktel.face/LivenessResult.isLive.<get-isLive>|<get-isLive>(){}[0]
+    final val realScore // io.github.cybersafetyid.faktel.face/LivenessResult.realScore|{}realScore[0]
+        final fun <get-realScore>(): kotlin/Double // io.github.cybersafetyid.faktel.face/LivenessResult.realScore.<get-realScore>|<get-realScore>(){}[0]
+
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.face/LivenessResult.component1|component1(){}[0]
+    final fun component2(): kotlin/Boolean // io.github.cybersafetyid.faktel.face/LivenessResult.component2|component2(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Boolean = ...): io.github.cybersafetyid.faktel.face/LivenessResult // io.github.cybersafetyid.faktel.face/LivenessResult.copy|copy(kotlin.Double;kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/LivenessResult.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/LivenessResult.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/LivenessResult.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/MiniFasNetLivenessDetector : io.github.cybersafetyid.faktel.face/LivenessDetector { // io.github.cybersafetyid.faktel.face/MiniFasNetLivenessDetector|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.inference/InferenceEngine, kotlin/ByteArray, kotlin/Double = ..., kotlin/Double = ..., io.github.cybersafetyid.faktel.core.inference/SessionOptions = ...) // io.github.cybersafetyid.faktel.face/MiniFasNetLivenessDetector.<init>|<init>(io.github.cybersafetyid.faktel.core.inference.InferenceEngine;kotlin.ByteArray;kotlin.Double;kotlin.Double;io.github.cybersafetyid.faktel.core.inference.SessionOptions){}[0]
+
+    final fun assess(io.github.cybersafetyid.faktel.core.image/RgbImage, io.github.cybersafetyid.faktel.face/Face): io.github.cybersafetyid.faktel.face/LivenessResult // io.github.cybersafetyid.faktel.face/MiniFasNetLivenessDetector.assess|assess(io.github.cybersafetyid.faktel.core.image.RgbImage;io.github.cybersafetyid.faktel.face.Face){}[0]
+    final fun close() // io.github.cybersafetyid.faktel.face/MiniFasNetLivenessDetector.close|close(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.face/YuNetFaceDetector : io.github.cybersafetyid.faktel.face/FaceDetector { // io.github.cybersafetyid.faktel.face/YuNetFaceDetector|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.inference/InferenceEngine, kotlin/ByteArray, io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config = ..., io.github.cybersafetyid.faktel.core.inference/SessionOptions = ...) // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.<init>|<init>(io.github.cybersafetyid.faktel.core.inference.InferenceEngine;kotlin.ByteArray;io.github.cybersafetyid.faktel.face.YuNetFaceDetector.Config;io.github.cybersafetyid.faktel.core.inference.SessionOptions){}[0]
+
+    final fun close() // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.close|close(){}[0]
+    final fun detect(io.github.cybersafetyid.faktel.core.image/RgbImage): kotlin.collections/List<io.github.cybersafetyid.faktel.face/Face> // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.detect|detect(io.github.cybersafetyid.faktel.core.image.RgbImage){}[0]
+
+    final class Config { // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config|null[0]
+        constructor <init>(kotlin/Double = ..., kotlin/Double = ..., kotlin/Int = ...) // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.<init>|<init>(kotlin.Double;kotlin.Double;kotlin.Int){}[0]
+
+        final val maxFaces // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.maxFaces|{}maxFaces[0]
+            final fun <get-maxFaces>(): kotlin/Int // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.maxFaces.<get-maxFaces>|<get-maxFaces>(){}[0]
+        final val nmsThreshold // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.nmsThreshold|{}nmsThreshold[0]
+            final fun <get-nmsThreshold>(): kotlin/Double // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.nmsThreshold.<get-nmsThreshold>|<get-nmsThreshold>(){}[0]
+        final val scoreThreshold // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.scoreThreshold|{}scoreThreshold[0]
+            final fun <get-scoreThreshold>(): kotlin/Double // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.scoreThreshold.<get-scoreThreshold>|<get-scoreThreshold>(){}[0]
+
+        final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.component1|component1(){}[0]
+        final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.component2|component2(){}[0]
+        final fun component3(): kotlin/Int // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.component3|component3(){}[0]
+        final fun copy(kotlin/Double = ..., kotlin/Double = ..., kotlin/Int = ...): io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.copy|copy(kotlin.Double;kotlin.Double;kotlin.Int){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.face/YuNetFaceDetector.Config.toString|toString(){}[0]
+    }
+}
+
+final fun (io.github.cybersafetyid.faktel.face/Face).io.github.cybersafetyid.faktel.face/headPose(): io.github.cybersafetyid.faktel.face/HeadPose // io.github.cybersafetyid.faktel.face/headPose|headPose@io.github.cybersafetyid.faktel.face.Face(){}[0]

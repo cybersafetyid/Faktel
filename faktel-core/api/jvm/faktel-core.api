@@ -1,0 +1,230 @@
+public abstract class io/github/cybersafetyid/faktel/core/FaktelException : java/lang/RuntimeException {
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/cybersafetyid/faktel/core/FaktelException$Inference : io/github/cybersafetyid/faktel/core/FaktelException {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/cybersafetyid/faktel/core/FaktelException$InvalidImage : io/github/cybersafetyid/faktel/core/FaktelException {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/cybersafetyid/faktel/core/FaktelException$ModelLoad : io/github/cybersafetyid/faktel/core/FaktelException {
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/Homography {
+	public static final field Companion Lio/github/cybersafetyid/faktel/core/geometry/Homography$Companion;
+	public final fun map (DD)Lio/github/cybersafetyid/faktel/core/geometry/Point;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/Homography$Companion {
+	public final fun fromCorrespondences (Ljava/util/List;Ljava/util/List;)Lio/github/cybersafetyid/faktel/core/geometry/Homography;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/Point {
+	public fun <init> (DD)V
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun copy (DD)Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/core/geometry/Point;DDILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun distanceTo (Lio/github/cybersafetyid/faktel/core/geometry/Point;)D
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getX ()D
+	public final fun getY ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/Quad {
+	public static final field Companion Lio/github/cybersafetyid/faktel/core/geometry/Quad$Companion;
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;)V
+	public final fun component1 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component2 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component3 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun component4 ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun copy (Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;)Lio/github/cybersafetyid/faktel/core/geometry/Quad;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/core/geometry/Quad;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;Lio/github/cybersafetyid/faktel/core/geometry/Point;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/geometry/Quad;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getArea ()D
+	public final fun getAspectRatio ()D
+	public final fun getBottomEdge ()D
+	public final fun getBottomLeft ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getBottomRight ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getCorners ()Ljava/util/List;
+	public final fun getLeftEdge ()D
+	public final fun getRightEdge ()D
+	public final fun getTopEdge ()D
+	public final fun getTopLeft ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public final fun getTopRight ()Lio/github/cybersafetyid/faktel/core/geometry/Point;
+	public fun hashCode ()I
+	public final fun rotated (I)Lio/github/cybersafetyid/faktel/core/geometry/Quad;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/Quad$Companion {
+	public final fun fromUnordered (Ljava/util/List;)Lio/github/cybersafetyid/faktel/core/geometry/Quad;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/Rect {
+	public fun <init> (DDDD)V
+	public final fun clampTo (II)Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun component4 ()D
+	public final fun copy (DDDD)Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/core/geometry/Rect;DDDDILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getArea ()D
+	public final fun getBottom ()D
+	public final fun getCenterX ()D
+	public final fun getCenterY ()D
+	public final fun getHeight ()D
+	public final fun getLeft ()D
+	public final fun getRight ()D
+	public final fun getTop ()D
+	public final fun getWidth ()D
+	public fun hashCode ()I
+	public final fun iou (Lio/github/cybersafetyid/faktel/core/geometry/Rect;)D
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/SimilarityTransform {
+	public static final field Companion Lio/github/cybersafetyid/faktel/core/geometry/SimilarityTransform$Companion;
+	public final fun getA ()D
+	public final fun getB ()D
+	public final fun getTx ()D
+	public final fun getTy ()D
+	public final fun inverse ()Lio/github/cybersafetyid/faktel/core/geometry/SimilarityTransform;
+	public final fun map (DD)Lio/github/cybersafetyid/faktel/core/geometry/Point;
+}
+
+public final class io/github/cybersafetyid/faktel/core/geometry/SimilarityTransform$Companion {
+	public final fun estimate (Ljava/util/List;Ljava/util/List;)Lio/github/cybersafetyid/faktel/core/geometry/SimilarityTransform;
+}
+
+public final class io/github/cybersafetyid/faktel/core/image/GrayImage {
+	public fun <init> (II[B)V
+	public final fun get (II)I
+	public final fun getData ()[B
+	public final fun getHeight ()I
+	public final fun getWidth ()I
+}
+
+public final class io/github/cybersafetyid/faktel/core/image/ImageDecoder {
+	public static final field INSTANCE Lio/github/cybersafetyid/faktel/core/image/ImageDecoder;
+	public final fun decode ([B)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+}
+
+public final class io/github/cybersafetyid/faktel/core/image/RgbImage {
+	public static final field Companion Lio/github/cybersafetyid/faktel/core/image/RgbImage$Companion;
+	public fun <init> (II[B)V
+	public final fun b (II)I
+	public final fun crop (Lio/github/cybersafetyid/faktel/core/geometry/Rect;)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun flipHorizontal ()Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun g (II)I
+	public final fun getData ()[B
+	public final fun getHeight ()I
+	public final fun getWidth ()I
+	public final fun r (II)I
+	public final fun resize (II)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun rotate (I)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun toGray ()Lio/github/cybersafetyid/faktel/core/image/GrayImage;
+}
+
+public final class io/github/cybersafetyid/faktel/core/image/RgbImage$Companion {
+	public final fun fromBgra (II[BI)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public static synthetic fun fromBgra$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage$Companion;II[BIILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun fromNv21 (II[B)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun fromRgba (II[BI)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public static synthetic fun fromRgba$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage$Companion;II[BIILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun fromYuv420 (II[BI[B[BIIII)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public static synthetic fun fromYuv420$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage$Companion;II[BI[B[BIIIIILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+}
+
+public final class io/github/cybersafetyid/faktel/core/image/WarpKt {
+	public static final fun warpPerspective (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/core/geometry/Quad;II)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public static final fun warpSimilarity (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/core/geometry/SimilarityTransform;II)Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/ChannelOrder : java/lang/Enum {
+	public static final field BGR Lio/github/cybersafetyid/faktel/core/inference/ChannelOrder;
+	public static final field RGB Lio/github/cybersafetyid/faktel/core/inference/ChannelOrder;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/cybersafetyid/faktel/core/inference/ChannelOrder;
+	public static fun values ()[Lio/github/cybersafetyid/faktel/core/inference/ChannelOrder;
+}
+
+public abstract interface class io/github/cybersafetyid/faktel/core/inference/InferenceEngine {
+	public abstract fun createSession ([BLio/github/cybersafetyid/faktel/core/inference/SessionOptions;)Lio/github/cybersafetyid/faktel/core/inference/InferenceSession;
+	public static synthetic fun createSession$default (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BLio/github/cybersafetyid/faktel/core/inference/SessionOptions;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/inference/InferenceSession;
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/InferenceEngine$DefaultImpls {
+	public static synthetic fun createSession$default (Lio/github/cybersafetyid/faktel/core/inference/InferenceEngine;[BLio/github/cybersafetyid/faktel/core/inference/SessionOptions;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/inference/InferenceSession;
+}
+
+public abstract interface class io/github/cybersafetyid/faktel/core/inference/InferenceSession : java/lang/AutoCloseable {
+	public abstract fun getInputNames ()Ljava/util/List;
+	public abstract fun getOutputNames ()Ljava/util/List;
+	public abstract fun run (Ljava/util/Map;)Ljava/util/Map;
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/JvmModelLoaderKt {
+	public static final fun readModelFile (Ljava/lang/String;)[B
+	public static final fun readModelResource (Ljava/lang/String;Ljava/lang/ClassLoader;)[B
+	public static synthetic fun readModelResource$default (Ljava/lang/String;Ljava/lang/ClassLoader;ILjava/lang/Object;)[B
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/Letterbox {
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/image/RgbImage;DII)V
+	public final fun getImage ()Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun getPadX ()I
+	public final fun getPadY ()I
+	public final fun getScale ()D
+	public final fun toSourceX (D)D
+	public final fun toSourceY (D)D
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/PreprocessKt {
+	public static final fun letterbox (Lio/github/cybersafetyid/faktel/core/image/RgbImage;II)Lio/github/cybersafetyid/faktel/core/inference/Letterbox;
+	public static synthetic fun letterbox$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage;IIILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/inference/Letterbox;
+	public static final fun toTensor (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/core/inference/ChannelOrder;FF)Lio/github/cybersafetyid/faktel/core/inference/Tensor;
+	public static synthetic fun toTensor$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/core/inference/ChannelOrder;FFILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/inference/Tensor;
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/SessionOptions {
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun copy (I)Lio/github/cybersafetyid/faktel/core/inference/SessionOptions;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/core/inference/SessionOptions;IILjava/lang/Object;)Lio/github/cybersafetyid/faktel/core/inference/SessionOptions;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getNumThreads ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/core/inference/Tensor {
+	public fun <init> ([I[F)V
+	public final fun getData ()[F
+	public final fun getShape ()[I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/core/quality/ImageQualityKt {
+	public static final fun blurScore (Lio/github/cybersafetyid/faktel/core/image/RgbImage;I)D
+	public static synthetic fun blurScore$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage;IILjava/lang/Object;)D
+	public static final fun laplacianVariance (Lio/github/cybersafetyid/faktel/core/image/GrayImage;)D
+	public static final fun meanBrightness (Lio/github/cybersafetyid/faktel/core/image/GrayImage;)D
+	public static final fun saturatedRatio (Lio/github/cybersafetyid/faktel/core/image/RgbImage;I)D
+	public static synthetic fun saturatedRatio$default (Lio/github/cybersafetyid/faktel/core/image/RgbImage;IILjava/lang/Object;)D
+}
+

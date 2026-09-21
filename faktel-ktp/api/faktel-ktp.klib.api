@@ -1,0 +1,148 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <faktel-root:faktel-ktp>
+final enum class io.github.cybersafetyid.faktel.ktp/KtpIssue : kotlin/Enum<io.github.cybersafetyid.faktel.ktp/KtpIssue> { // io.github.cybersafetyid.faktel.ktp/KtpIssue|null[0]
+    enum entry BAD_ASPECT_RATIO // io.github.cybersafetyid.faktel.ktp/KtpIssue.BAD_ASPECT_RATIO|null[0]
+    enum entry BLURRY // io.github.cybersafetyid.faktel.ktp/KtpIssue.BLURRY|null[0]
+    enum entry CARD_NOT_FOUND // io.github.cybersafetyid.faktel.ktp/KtpIssue.CARD_NOT_FOUND|null[0]
+    enum entry GLARE // io.github.cybersafetyid.faktel.ktp/KtpIssue.GLARE|null[0]
+    enum entry PORTRAIT_MISPLACED // io.github.cybersafetyid.faktel.ktp/KtpIssue.PORTRAIT_MISPLACED|null[0]
+    enum entry PORTRAIT_NOT_FOUND // io.github.cybersafetyid.faktel.ktp/KtpIssue.PORTRAIT_NOT_FOUND|null[0]
+    enum entry TOO_SMALL // io.github.cybersafetyid.faktel.ktp/KtpIssue.TOO_SMALL|null[0]
+
+    final val entries // io.github.cybersafetyid.faktel.ktp/KtpIssue.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<io.github.cybersafetyid.faktel.ktp/KtpIssue> // io.github.cybersafetyid.faktel.ktp/KtpIssue.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): io.github.cybersafetyid.faktel.ktp/KtpIssue // io.github.cybersafetyid.faktel.ktp/KtpIssue.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<io.github.cybersafetyid.faktel.ktp/KtpIssue> // io.github.cybersafetyid.faktel.ktp/KtpIssue.values|values#static(){}[0]
+}
+
+abstract interface io.github.cybersafetyid.faktel.ktp/KtpDetector { // io.github.cybersafetyid.faktel.ktp/KtpDetector|null[0]
+    abstract fun detect(io.github.cybersafetyid.faktel.core.image/RgbImage): io.github.cybersafetyid.faktel.ktp/KtpDetection? // io.github.cybersafetyid.faktel.ktp/KtpDetector.detect|detect(io.github.cybersafetyid.faktel.core.image.RgbImage){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector : io.github.cybersafetyid.faktel.ktp/KtpDetector { // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config = ...) // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.<init>|<init>(io.github.cybersafetyid.faktel.ktp.ClassicalKtpDetector.Config){}[0]
+
+    final fun detect(io.github.cybersafetyid.faktel.core.image/RgbImage): io.github.cybersafetyid.faktel.ktp/KtpDetection? // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.detect|detect(io.github.cybersafetyid.faktel.core.image.RgbImage){}[0]
+
+    final class Config { // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config|null[0]
+        constructor <init>(kotlin/Int = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Int = ..., kotlin/Double = ...) // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.<init>|<init>(kotlin.Int;kotlin.Double;kotlin.Double;kotlin.Int;kotlin.Double){}[0]
+
+        final val analysisSize // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.analysisSize|{}analysisSize[0]
+            final fun <get-analysisSize>(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.analysisSize.<get-analysisSize>|<get-analysisSize>(){}[0]
+        final val maxAreaRatio // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.maxAreaRatio|{}maxAreaRatio[0]
+            final fun <get-maxAreaRatio>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.maxAreaRatio.<get-maxAreaRatio>|<get-maxAreaRatio>(){}[0]
+        final val minAreaRatio // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.minAreaRatio|{}minAreaRatio[0]
+            final fun <get-minAreaRatio>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.minAreaRatio.<get-minAreaRatio>|<get-minAreaRatio>(){}[0]
+        final val minContrast // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.minContrast|{}minContrast[0]
+            final fun <get-minContrast>(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.minContrast.<get-minContrast>|<get-minContrast>(){}[0]
+        final val minRectangularity // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.minRectangularity|{}minRectangularity[0]
+            final fun <get-minRectangularity>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.minRectangularity.<get-minRectangularity>|<get-minRectangularity>(){}[0]
+
+        final fun component1(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.component1|component1(){}[0]
+        final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.component2|component2(){}[0]
+        final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.component3|component3(){}[0]
+        final fun component4(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.component4|component4(){}[0]
+        final fun component5(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.component5|component5(){}[0]
+        final fun copy(kotlin/Int = ..., kotlin/Double = ..., kotlin/Double = ..., kotlin/Int = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.copy|copy(kotlin.Int;kotlin.Double;kotlin.Double;kotlin.Int;kotlin.Double){}[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.equals|equals(kotlin.Any?){}[0]
+        final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.ktp/ClassicalKtpDetector.Config.toString|toString(){}[0]
+    }
+}
+
+final class io.github.cybersafetyid.faktel.ktp/KtpDetection { // io.github.cybersafetyid.faktel.ktp/KtpDetection|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.core.geometry/Quad, kotlin/Double) // io.github.cybersafetyid.faktel.ktp/KtpDetection.<init>|<init>(io.github.cybersafetyid.faktel.core.geometry.Quad;kotlin.Double){}[0]
+
+    final val confidence // io.github.cybersafetyid.faktel.ktp/KtpDetection.confidence|{}confidence[0]
+        final fun <get-confidence>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpDetection.confidence.<get-confidence>|<get-confidence>(){}[0]
+    final val quad // io.github.cybersafetyid.faktel.ktp/KtpDetection.quad|{}quad[0]
+        final fun <get-quad>(): io.github.cybersafetyid.faktel.core.geometry/Quad // io.github.cybersafetyid.faktel.ktp/KtpDetection.quad.<get-quad>|<get-quad>(){}[0]
+
+    final fun component1(): io.github.cybersafetyid.faktel.core.geometry/Quad // io.github.cybersafetyid.faktel.ktp/KtpDetection.component1|component1(){}[0]
+    final fun component2(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpDetection.component2|component2(){}[0]
+    final fun copy(io.github.cybersafetyid.faktel.core.geometry/Quad = ..., kotlin/Double = ...): io.github.cybersafetyid.faktel.ktp/KtpDetection // io.github.cybersafetyid.faktel.ktp/KtpDetection.copy|copy(io.github.cybersafetyid.faktel.core.geometry.Quad;kotlin.Double){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.ktp/KtpDetection.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpDetection.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.ktp/KtpDetection.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.ktp/KtpScanConfig { // io.github.cybersafetyid.faktel.ktp/KtpScanConfig|null[0]
+    constructor <init>(kotlin/Double = ..., kotlin/Int = ..., kotlin/Double = ..., kotlin/Double = ..., io.github.cybersafetyid.faktel.core.geometry/Rect = ...) // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.<init>|<init>(kotlin.Double;kotlin.Int;kotlin.Double;kotlin.Double;io.github.cybersafetyid.faktel.core.geometry.Rect){}[0]
+
+    final val aspectTolerance // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.aspectTolerance|{}aspectTolerance[0]
+        final fun <get-aspectTolerance>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.aspectTolerance.<get-aspectTolerance>|<get-aspectTolerance>(){}[0]
+    final val maxGlareRatio // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.maxGlareRatio|{}maxGlareRatio[0]
+        final fun <get-maxGlareRatio>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.maxGlareRatio.<get-maxGlareRatio>|<get-maxGlareRatio>(){}[0]
+    final val minBlurScore // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.minBlurScore|{}minBlurScore[0]
+        final fun <get-minBlurScore>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.minBlurScore.<get-minBlurScore>|<get-minBlurScore>(){}[0]
+    final val minCardWidthPx // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.minCardWidthPx|{}minCardWidthPx[0]
+        final fun <get-minCardWidthPx>(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.minCardWidthPx.<get-minCardWidthPx>|<get-minCardWidthPx>(){}[0]
+    final val portraitRegion // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.portraitRegion|{}portraitRegion[0]
+        final fun <get-portraitRegion>(): io.github.cybersafetyid.faktel.core.geometry/Rect // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.portraitRegion.<get-portraitRegion>|<get-portraitRegion>(){}[0]
+
+    final fun component1(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.component1|component1(){}[0]
+    final fun component2(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.component2|component2(){}[0]
+    final fun component3(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.component3|component3(){}[0]
+    final fun component4(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.component4|component4(){}[0]
+    final fun component5(): io.github.cybersafetyid.faktel.core.geometry/Rect // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.component5|component5(){}[0]
+    final fun copy(kotlin/Double = ..., kotlin/Int = ..., kotlin/Double = ..., kotlin/Double = ..., io.github.cybersafetyid.faktel.core.geometry/Rect = ...): io.github.cybersafetyid.faktel.ktp/KtpScanConfig // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.copy|copy(kotlin.Double;kotlin.Int;kotlin.Double;kotlin.Double;io.github.cybersafetyid.faktel.core.geometry.Rect){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.ktp/KtpScanConfig.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.ktp/KtpScanResult { // io.github.cybersafetyid.faktel.ktp/KtpScanResult|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.ktp/KtpDetection?, io.github.cybersafetyid.faktel.core.image/RgbImage?, io.github.cybersafetyid.faktel.face/Face?, kotlin/Double?, kotlin/Double?, kotlin.collections/List<io.github.cybersafetyid.faktel.ktp/KtpIssue>) // io.github.cybersafetyid.faktel.ktp/KtpScanResult.<init>|<init>(io.github.cybersafetyid.faktel.ktp.KtpDetection?;io.github.cybersafetyid.faktel.core.image.RgbImage?;io.github.cybersafetyid.faktel.face.Face?;kotlin.Double?;kotlin.Double?;kotlin.collections.List<io.github.cybersafetyid.faktel.ktp.KtpIssue>){}[0]
+
+    final val blurScore // io.github.cybersafetyid.faktel.ktp/KtpScanResult.blurScore|{}blurScore[0]
+        final fun <get-blurScore>(): kotlin/Double? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.blurScore.<get-blurScore>|<get-blurScore>(){}[0]
+    final val card // io.github.cybersafetyid.faktel.ktp/KtpScanResult.card|{}card[0]
+        final fun <get-card>(): io.github.cybersafetyid.faktel.core.image/RgbImage? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.card.<get-card>|<get-card>(){}[0]
+    final val detection // io.github.cybersafetyid.faktel.ktp/KtpScanResult.detection|{}detection[0]
+        final fun <get-detection>(): io.github.cybersafetyid.faktel.ktp/KtpDetection? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.detection.<get-detection>|<get-detection>(){}[0]
+    final val glareRatio // io.github.cybersafetyid.faktel.ktp/KtpScanResult.glareRatio|{}glareRatio[0]
+        final fun <get-glareRatio>(): kotlin/Double? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.glareRatio.<get-glareRatio>|<get-glareRatio>(){}[0]
+    final val isAcceptable // io.github.cybersafetyid.faktel.ktp/KtpScanResult.isAcceptable|{}isAcceptable[0]
+        final fun <get-isAcceptable>(): kotlin/Boolean // io.github.cybersafetyid.faktel.ktp/KtpScanResult.isAcceptable.<get-isAcceptable>|<get-isAcceptable>(){}[0]
+    final val issues // io.github.cybersafetyid.faktel.ktp/KtpScanResult.issues|{}issues[0]
+        final fun <get-issues>(): kotlin.collections/List<io.github.cybersafetyid.faktel.ktp/KtpIssue> // io.github.cybersafetyid.faktel.ktp/KtpScanResult.issues.<get-issues>|<get-issues>(){}[0]
+    final val portrait // io.github.cybersafetyid.faktel.ktp/KtpScanResult.portrait|{}portrait[0]
+        final fun <get-portrait>(): io.github.cybersafetyid.faktel.face/Face? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.portrait.<get-portrait>|<get-portrait>(){}[0]
+
+    final fun component1(): io.github.cybersafetyid.faktel.ktp/KtpDetection? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.component1|component1(){}[0]
+    final fun component2(): io.github.cybersafetyid.faktel.core.image/RgbImage? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.component2|component2(){}[0]
+    final fun component3(): io.github.cybersafetyid.faktel.face/Face? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.component3|component3(){}[0]
+    final fun component4(): kotlin/Double? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.component4|component4(){}[0]
+    final fun component5(): kotlin/Double? // io.github.cybersafetyid.faktel.ktp/KtpScanResult.component5|component5(){}[0]
+    final fun component6(): kotlin.collections/List<io.github.cybersafetyid.faktel.ktp/KtpIssue> // io.github.cybersafetyid.faktel.ktp/KtpScanResult.component6|component6(){}[0]
+    final fun copy(io.github.cybersafetyid.faktel.ktp/KtpDetection? = ..., io.github.cybersafetyid.faktel.core.image/RgbImage? = ..., io.github.cybersafetyid.faktel.face/Face? = ..., kotlin/Double? = ..., kotlin/Double? = ..., kotlin.collections/List<io.github.cybersafetyid.faktel.ktp/KtpIssue> = ...): io.github.cybersafetyid.faktel.ktp/KtpScanResult // io.github.cybersafetyid.faktel.ktp/KtpScanResult.copy|copy(io.github.cybersafetyid.faktel.ktp.KtpDetection?;io.github.cybersafetyid.faktel.core.image.RgbImage?;io.github.cybersafetyid.faktel.face.Face?;kotlin.Double?;kotlin.Double?;kotlin.collections.List<io.github.cybersafetyid.faktel.ktp.KtpIssue>){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // io.github.cybersafetyid.faktel.ktp/KtpScanResult.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpScanResult.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // io.github.cybersafetyid.faktel.ktp/KtpScanResult.toString|toString(){}[0]
+}
+
+final class io.github.cybersafetyid.faktel.ktp/KtpScanner { // io.github.cybersafetyid.faktel.ktp/KtpScanner|null[0]
+    constructor <init>(io.github.cybersafetyid.faktel.ktp/KtpDetector = ..., io.github.cybersafetyid.faktel.face/FaceDetector? = ..., io.github.cybersafetyid.faktel.ktp/KtpScanConfig = ...) // io.github.cybersafetyid.faktel.ktp/KtpScanner.<init>|<init>(io.github.cybersafetyid.faktel.ktp.KtpDetector;io.github.cybersafetyid.faktel.face.FaceDetector?;io.github.cybersafetyid.faktel.ktp.KtpScanConfig){}[0]
+
+    final fun scan(io.github.cybersafetyid.faktel.core.image/RgbImage): io.github.cybersafetyid.faktel.ktp/KtpScanResult // io.github.cybersafetyid.faktel.ktp/KtpScanner.scan|scan(io.github.cybersafetyid.faktel.core.image.RgbImage){}[0]
+}
+
+final object io.github.cybersafetyid.faktel.ktp/KtpSpec { // io.github.cybersafetyid.faktel.ktp/KtpSpec|null[0]
+    final const val ASPECT_RATIO // io.github.cybersafetyid.faktel.ktp/KtpSpec.ASPECT_RATIO|{}ASPECT_RATIO[0]
+        final fun <get-ASPECT_RATIO>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpSpec.ASPECT_RATIO.<get-ASPECT_RATIO>|<get-ASPECT_RATIO>(){}[0]
+    final const val HEIGHT_MM // io.github.cybersafetyid.faktel.ktp/KtpSpec.HEIGHT_MM|{}HEIGHT_MM[0]
+        final fun <get-HEIGHT_MM>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpSpec.HEIGHT_MM.<get-HEIGHT_MM>|<get-HEIGHT_MM>(){}[0]
+    final const val RECTIFIED_HEIGHT // io.github.cybersafetyid.faktel.ktp/KtpSpec.RECTIFIED_HEIGHT|{}RECTIFIED_HEIGHT[0]
+        final fun <get-RECTIFIED_HEIGHT>(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpSpec.RECTIFIED_HEIGHT.<get-RECTIFIED_HEIGHT>|<get-RECTIFIED_HEIGHT>(){}[0]
+    final const val RECTIFIED_WIDTH // io.github.cybersafetyid.faktel.ktp/KtpSpec.RECTIFIED_WIDTH|{}RECTIFIED_WIDTH[0]
+        final fun <get-RECTIFIED_WIDTH>(): kotlin/Int // io.github.cybersafetyid.faktel.ktp/KtpSpec.RECTIFIED_WIDTH.<get-RECTIFIED_WIDTH>|<get-RECTIFIED_WIDTH>(){}[0]
+    final const val WIDTH_MM // io.github.cybersafetyid.faktel.ktp/KtpSpec.WIDTH_MM|{}WIDTH_MM[0]
+        final fun <get-WIDTH_MM>(): kotlin/Double // io.github.cybersafetyid.faktel.ktp/KtpSpec.WIDTH_MM.<get-WIDTH_MM>|<get-WIDTH_MM>(){}[0]
+}

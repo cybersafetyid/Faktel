@@ -1,0 +1,22 @@
+[versions]
+kotlin = "2.3.21"
+agp = "9.4.1"
+coroutines = "1.10.2"
+onnxruntime = "1.30.0"
+dokka = "2.2.0"
+binaryCompat = "0.18.2"
+vanniktech = "0.37.0"
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+onnxruntime-android = { module = "com.microsoft.onnxruntime:onnxruntime-android", version.ref = "onnxruntime" }
+onnxruntime-jvm = { module = "com.microsoft.onnxruntime:onnxruntime", version.ref = "onnxruntime" }
+
+# build-logic classpath
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+plugin-agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+plugin-vanniktech = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktech" }
+
+[plugins]
+binaryCompat = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binaryCompat" }

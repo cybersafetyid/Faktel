@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    name: JVM + Android (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Unit tests (JVM)
+        run: ./gradlew jvmTest
+      - name: Android compile + host tests
+        run: ./gradlew compileAndroidMain testAndroidHostTest
+
+  apple:
+    name: iOS + API check + XCFramework (macOS)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Unit tests (JVM + iOS simulator)
+        run: ./gradlew jvmTest iosSimulatorArm64Test
+      - name: Public API compatibility
+        run: ./gradlew apiCheck
+      - name: Build XCFramework
+        run: ./gradlew :faktel:assembleFaktelXCFramework
+      - name: Swift package tests (ONNX Runtime on iOS simulator)
+        working-directory: ios/FaktelOnnxRuntime
+        run: |
+          DEST=$(xcrun simctl list devices available | grep -m1 "iPhone" | sed -E 's/.*\(([A-F0-9-]{36})\).*/\1/')
+          xcodebuild test -scheme FaktelOnnxRuntime -destination "id=$DEST"
+
+  version:
+    name: Version sanity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: VERSION_NAME is SemVer
+        run: |
+          v=$(grep '^VERSION_NAME=' gradle.properties | cut -d= -f2)
+          echo "VERSION_NAME=$v"
+          [[ "$v" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-SNAPSHOT)?$ ]] || { echo "not SemVer"; exit 1; }

@@ -1,0 +1,117 @@
+public final class io/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector : io/github/cybersafetyid/faktel/ktp/KtpDetector {
+	public fun <init> ()V
+	public fun <init> (Lio/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector$Config;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector$Config;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun detect (Lio/github/cybersafetyid/faktel/core/image/RgbImage;)Lio/github/cybersafetyid/faktel/ktp/KtpDetection;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector$Config {
+	public fun <init> ()V
+	public fun <init> (IDDID)V
+	public synthetic fun <init> (IDDIDILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun component4 ()I
+	public final fun component5 ()D
+	public final fun copy (IDDID)Lio/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector$Config;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector$Config;IDDIDILjava/lang/Object;)Lio/github/cybersafetyid/faktel/ktp/ClassicalKtpDetector$Config;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAnalysisSize ()I
+	public final fun getMaxAreaRatio ()D
+	public final fun getMinAreaRatio ()D
+	public final fun getMinContrast ()I
+	public final fun getMinRectangularity ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/KtpDetection {
+	public fun <init> (Lio/github/cybersafetyid/faktel/core/geometry/Quad;D)V
+	public final fun component1 ()Lio/github/cybersafetyid/faktel/core/geometry/Quad;
+	public final fun component2 ()D
+	public final fun copy (Lio/github/cybersafetyid/faktel/core/geometry/Quad;D)Lio/github/cybersafetyid/faktel/ktp/KtpDetection;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/ktp/KtpDetection;Lio/github/cybersafetyid/faktel/core/geometry/Quad;DILjava/lang/Object;)Lio/github/cybersafetyid/faktel/ktp/KtpDetection;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getConfidence ()D
+	public final fun getQuad ()Lio/github/cybersafetyid/faktel/core/geometry/Quad;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/cybersafetyid/faktel/ktp/KtpDetector {
+	public abstract fun detect (Lio/github/cybersafetyid/faktel/core/image/RgbImage;)Lio/github/cybersafetyid/faktel/ktp/KtpDetection;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/KtpIssue : java/lang/Enum {
+	public static final field BAD_ASPECT_RATIO Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static final field BLURRY Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static final field CARD_NOT_FOUND Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static final field GLARE Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static final field PORTRAIT_MISPLACED Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static final field PORTRAIT_NOT_FOUND Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static final field TOO_SMALL Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+	public static fun values ()[Lio/github/cybersafetyid/faktel/ktp/KtpIssue;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/KtpScanConfig {
+	public fun <init> ()V
+	public fun <init> (DIDDLio/github/cybersafetyid/faktel/core/geometry/Rect;)V
+	public synthetic fun <init> (DIDDLio/github/cybersafetyid/faktel/core/geometry/Rect;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()D
+	public final fun component2 ()I
+	public final fun component3 ()D
+	public final fun component4 ()D
+	public final fun component5 ()Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public final fun copy (DIDDLio/github/cybersafetyid/faktel/core/geometry/Rect;)Lio/github/cybersafetyid/faktel/ktp/KtpScanConfig;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/ktp/KtpScanConfig;DIDDLio/github/cybersafetyid/faktel/core/geometry/Rect;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/ktp/KtpScanConfig;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAspectTolerance ()D
+	public final fun getMaxGlareRatio ()D
+	public final fun getMinBlurScore ()D
+	public final fun getMinCardWidthPx ()I
+	public final fun getPortraitRegion ()Lio/github/cybersafetyid/faktel/core/geometry/Rect;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/KtpScanResult {
+	public fun <init> (Lio/github/cybersafetyid/faktel/ktp/KtpDetection;Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;Ljava/lang/Double;Ljava/lang/Double;Ljava/util/List;)V
+	public final fun component1 ()Lio/github/cybersafetyid/faktel/ktp/KtpDetection;
+	public final fun component2 ()Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun component3 ()Lio/github/cybersafetyid/faktel/face/Face;
+	public final fun component4 ()Ljava/lang/Double;
+	public final fun component5 ()Ljava/lang/Double;
+	public final fun component6 ()Ljava/util/List;
+	public final fun copy (Lio/github/cybersafetyid/faktel/ktp/KtpDetection;Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;Ljava/lang/Double;Ljava/lang/Double;Ljava/util/List;)Lio/github/cybersafetyid/faktel/ktp/KtpScanResult;
+	public static synthetic fun copy$default (Lio/github/cybersafetyid/faktel/ktp/KtpScanResult;Lio/github/cybersafetyid/faktel/ktp/KtpDetection;Lio/github/cybersafetyid/faktel/core/image/RgbImage;Lio/github/cybersafetyid/faktel/face/Face;Ljava/lang/Double;Ljava/lang/Double;Ljava/util/List;ILjava/lang/Object;)Lio/github/cybersafetyid/faktel/ktp/KtpScanResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBlurScore ()Ljava/lang/Double;
+	public final fun getCard ()Lio/github/cybersafetyid/faktel/core/image/RgbImage;
+	public final fun getDetection ()Lio/github/cybersafetyid/faktel/ktp/KtpDetection;
+	public final fun getGlareRatio ()Ljava/lang/Double;
+	public final fun getIssues ()Ljava/util/List;
+	public final fun getPortrait ()Lio/github/cybersafetyid/faktel/face/Face;
+	public fun hashCode ()I
+	public final fun isAcceptable ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/KtpScanner {
+	public fun <init> ()V
+	public fun <init> (Lio/github/cybersafetyid/faktel/ktp/KtpDetector;Lio/github/cybersafetyid/faktel/face/FaceDetector;Lio/github/cybersafetyid/faktel/ktp/KtpScanConfig;)V
+	public synthetic fun <init> (Lio/github/cybersafetyid/faktel/ktp/KtpDetector;Lio/github/cybersafetyid/faktel/face/FaceDetector;Lio/github/cybersafetyid/faktel/ktp/KtpScanConfig;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun scan (Lio/github/cybersafetyid/faktel/core/image/RgbImage;)Lio/github/cybersafetyid/faktel/ktp/KtpScanResult;
+}
+
+public final class io/github/cybersafetyid/faktel/ktp/KtpSpec {
+	public static final field ASPECT_RATIO D
+	public static final field HEIGHT_MM D
+	public static final field INSTANCE Lio/github/cybersafetyid/faktel/ktp/KtpSpec;
+	public static final field RECTIFIED_HEIGHT I
+	public static final field RECTIFIED_WIDTH I
+	public static final field WIDTH_MM D
+}
+
