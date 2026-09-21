@@ -20,3 +20,6 @@ docs/research/
 
 # IDE / language-server output
 bin/
+
+# Local credentials (never commit)
+.secrets/
