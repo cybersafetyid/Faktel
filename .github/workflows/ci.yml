@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-java@v6
         with: { distribution: temurin, java-version: 21 }
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
       - name: Unit tests (JVM)
         run: ./gradlew jvmTest
       - name: Android compile + host tests
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-java@v6
         with: { distribution: temurin, java-version: 21 }
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
       - name: Unit tests (JVM + iOS simulator)
         run: ./gradlew jvmTest iosSimulatorArm64Test
       - name: Public API compatibility
