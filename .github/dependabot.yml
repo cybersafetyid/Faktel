@@ -6,6 +6,9 @@ updates:
   - package-ecosystem: gradle
     directory: /build-logic
     schedule: { interval: weekly }
+  - package-ecosystem: gradle
+    directory: /samples/android
+    schedule: { interval: weekly }
   - package-ecosystem: github-actions
     directory: /
     schedule: { interval: weekly }
