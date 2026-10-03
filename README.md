@@ -11,6 +11,15 @@ no cloud round trip, no vendor CV SDK. One shared Kotlin API for Android, iOS an
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-pre--1.0-orange.svg)
 
+<p align="center">
+  <img src="docs/images/hero.png" alt="Faktel sample apps on iPhone (left two) and Android (right two): a selfie accepted with face box, landmarks and liveness, and a KTP-like card detected, rectified and validated" width="100%">
+</p>
+
+<p align="center"><sub>
+  Real output of the <a href="samples/README.md">sample apps</a> (SwiftUI on an iPhone simulator, Jetpack Compose on an Android emulator),
+  running the bundled models on-device. Photo: Duman Photography / Unsplash; the card is a fictional, synthetic sample.
+</sub></p>
+
 > **Status: pre-1.0 (`0.x`).** The API can still change between minor versions; every change is recorded in the
 > [CHANGELOG](CHANGELOG.md). See [Limitations](#limitations-read-this-first) before using it for anything
 > security-sensitive.
@@ -28,6 +37,22 @@ no cloud round trip, no vendor CV SDK. One shared Kotlin API for Android, iOS an
 | Camera-frame conversion (NV21 / YUV_420_888 / BGRA / RGBA, rotate, flip) | `RgbImage.from*` | pure Kotlin | no |
 
 All heavy math runs through one small seam, `InferenceEngine`, so the ML runtime is swappable.
+
+## See it work
+
+The [`samples/`](samples/README.md) folder has two complete, modern demo apps - **Jetpack Compose** for Android and
+**SwiftUI** for iOS - that run the real pipelines on-device:
+
+| Selfie check | KTP scan |
+|---|---|
+| ![Selfie on iOS](docs/images/ios-selfie-result.png) | ![KTP on iOS](docs/images/ios-ktp-result.png) |
+| ![Selfie on Android](docs/images/android-selfie-result.png) | ![KTP on Android](docs/images/android-ktp-result.png) |
+
+- **Selfie check**: face box + 5 landmarks, detector confidence, passive liveness score, sharpness and head pose.
+- **KTP scan**: card outline, perspective-rectified 1011x638 card, sharpness, glare, portrait placement.
+
+All integration code is one file per platform ([Kotlin](samples/android/app/src/main/kotlin/io/github/cybersafetyid/faktel/sample/FaktelEngine.kt),
+[Swift](samples/ios/FaktelDemo/FaktelEngine.swift)). Run them yourself: [samples/README.md](samples/README.md).
 
 ## Modules
 
@@ -88,7 +113,7 @@ Selfie-to-KTP match: [docs/guides/selfie-ktp-matching.md](docs/guides/selfie-ktp
 ## Documentation
 
 Start at **[docs/README.md](docs/README.md)**. Highlights:
-[Getting started](docs/guides/getting-started.md) - [Architecture](docs/architecture.md) -
+[Sample apps](samples/README.md) - [Getting started](docs/guides/getting-started.md) - [Architecture](docs/architecture.md) -
 [Face guide](docs/guides/face.md) - [KTP guide](docs/guides/ktp.md) - [Models & licences](models/MODELS.md) -
 [Tuning thresholds](docs/guides/tuning.md) - [Privacy & security](docs/guides/privacy-and-security.md) -
 [Troubleshooting](docs/guides/troubleshooting.md) - [API reference](https://cybersafetyid.github.io/Faktel/).
@@ -109,9 +134,10 @@ Start at **[docs/README.md](docs/README.md)**. Highlights:
 ## Verified
 
 Unit tests run on JVM and the iOS simulator in CI. The real models (YuNet, MiniFASNetV2, an ArcFace MobileFaceNet)
-were exercised end-to-end through ONNX Runtime on desktop JVM **and** on an iPhone simulator with matching results.
-On-device Android *runtime* (as opposed to compilation) is exercised by your app; see
-[docs/development/testing.md](docs/development/testing.md) for what is and is not covered automatically.
+were exercised end-to-end through ONNX Runtime on desktop JVM, on an iPhone simulator **and** on an Android emulator
+(the [sample apps](samples/README.md) - screenshots above). Not yet measured: latency on real mid-range phones, and
+emulator runs are not automated in CI; see [docs/development/testing.md](docs/development/testing.md) for exactly
+what is and is not covered automatically.
 
 ## Contributing
 

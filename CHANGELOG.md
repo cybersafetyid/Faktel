@@ -6,6 +6,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+- Sample apps: Jetpack Compose (Android) and SwiftUI (iOS) demos of selfie checks and KTP scanning, in
+  [`samples/`](samples). README now shows screenshots from an Android emulator and an iPhone simulator.
+
+### Fixed
+- `faktel-ort`: `OrtInferenceEngine` was missing from the **Android** artifact (the shared `ortJavaMain` sources were not
+  wired into the Android target), so Android apps could not compile against it. Found while building the Android sample.
+
 ## [0.1.0] - 2026-09-21
 
 ### Added

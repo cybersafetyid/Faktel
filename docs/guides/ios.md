@@ -4,6 +4,9 @@ Kotlin/Native cannot link the ONNX Runtime static libraries reliably, so on iOS 
 handed to Faktel through the `InferenceEngine` interface (see [ADR 0002](../adr/0002-onnx-runtime-on-ios-via-swift.md)).
 Everything else - all detection, quality, liveness, KTP logic - is the same shared Kotlin.
 
+A complete working app (SwiftUI, selfie + KTP screens) is in [`samples/ios`](../../samples/ios) - see the
+[sample apps](../../samples/README.md) and [`FaktelEngine.swift`](../../samples/ios/FaktelDemo/FaktelEngine.swift).
+
 There are two integration styles. Pick the one that matches your app.
 
 ## A. Native Swift app using the `Faktel` XCFramework
@@ -33,6 +36,13 @@ let detector = YuNetFaceDetector(
 let image = try ImageDecoder.shared.decode(bytes: IosBridgingKt.toByteArray(jpegData))
 let faces = try detector.detect(image: image)
 ```
+
+Photos from `UIImage`: draw the image upright into an RGBA `CGContext` and call `fromRgba`. **`CGContext` is bottom-up
+while UIKit is top-down - flip it** (`translateBy(x: 0, y: h); scaleBy(x: 1, y: -1)`) or Faktel receives an upside-down
+image and returns misplaced boxes and landmarks. See `UIImage.toRgbImage()` in the sample.
+
+Kotlin default arguments are not visible from Swift: pass every constructor/config argument explicitly (the sample shows
+the default values).
 
 Camera frames: convert a BGRA `CVPixelBuffer` to bytes (lock the base address, honour `bytesPerRow`), then
 `RgbImage.Companion.shared.fromBgra(width:height:bgra:rowStride:)`. For NV12 use `fromYuv420` with the

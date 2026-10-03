@@ -13,7 +13,7 @@ Status of ideas, not promises. Open an issue to discuss or to pick one up.
   largely unpublished.
 - **Calibrated default thresholds** from real-device data (blur, glare, liveness, match).
 - **Android runtime CI** using an emulator/device-farm job (compile + host tests run today).
-- **Sample apps** (Compose Multiplatform) with camera integration.
+- **Camera integration in the samples** (CameraX / AVFoundation live preview); today they analyse still photos.
 
 ## Later
 

@@ -36,7 +36,11 @@ XCFramework build.
 Verified manually during development (not yet automated in CI): the real models through ONNX Runtime on desktop JVM
 and on an iPhone simulator, with matching results.
 
-**Not covered:** running inference on an Android device/emulator (ONNX Runtime's Android natives cannot load in a
+Verified manually: the [sample apps](../../samples/README.md) run the real models end to end on an Android emulator
+(Pixel 10 Pro AVD) and an iPhone simulator - face detection, liveness, quality, KTP detection, rectification and portrait
+validation all return the expected results.
+
+**Not covered automatically:** running inference on an Android device/emulator in CI (ONNX Runtime's Android natives cannot load in a
 host JVM test). The Android backend shares its implementation with the desktop backend (same Java API) and is
 compiled in CI, but on-device behaviour and performance should be checked in your app. An emulator CI job is on the
 [roadmap](../roadmap.md); contributions welcome.

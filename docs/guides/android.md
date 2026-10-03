@@ -1,5 +1,9 @@
 # Android
 
+A complete working app (Compose UI, selfie + KTP screens) is in [`samples/android`](../../samples/android) -
+see the [sample apps](../../samples/README.md) and [`FaktelEngine.kt`](../../samples/android/app/src/main/kotlin/io/github/cybersafetyid/faktel/sample/FaktelEngine.kt)
+for the whole integration in one file.
+
 ## Setup
 
 `faktel` brings `faktel-ort`, which depends on `com.microsoft.onnxruntime:onnxruntime-android` (CPU). No manual
@@ -59,5 +63,5 @@ APK size impact is dominated by ONNX Runtime's native libraries (per ABI); use A
 
 ## Testing
 
-Host (JVM) unit tests cover all pure-Kotlin logic. Running the ONNX models on a device or emulator is done from your
-app; see [testing](../development/testing.md).
+Host (JVM) unit tests cover all pure-Kotlin logic. The [sample app](../../samples/android) runs the real models on an
+Android emulator (verified on a Pixel 10 Pro arm64 AVD, Android 37); see [testing](../development/testing.md).

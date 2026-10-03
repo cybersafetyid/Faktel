@@ -4,6 +4,7 @@
 |---|---|
 | Understand what Faktel is and how it is built | [Architecture](architecture.md) |
 | Add it to my app in 10 minutes | [Getting started](guides/getting-started.md) |
+| See it running (screenshots, runnable Android + iOS apps) | [Sample apps](../samples/README.md) |
 | Set up a platform | [Android](guides/android.md) - [iOS](guides/ios.md) - [Desktop JVM](guides/jvm.md) |
 | Detect faces, check quality, run liveness | [Face guide](guides/face.md) |
 | Scan and validate a KTP | [KTP guide](guides/ktp.md) |

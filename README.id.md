@@ -6,6 +6,15 @@ Faktel adalah library open source (Apache-2.0) yang menjalankan pipeline compute
 tanpa server, tanpa SDK CV vendor - dengan satu API Kotlin untuk Android, iOS, dan JVM desktop.
 Dokumentasi lengkap (bahasa Inggris) ada di [docs/README.md](docs/README.md).
 
+<p align="center">
+  <img src="docs/images/hero.png" alt="Aplikasi contoh Faktel di iPhone (dua kiri) dan Android (dua kanan): selfie diterima dengan kotak wajah, landmark, dan liveness; kartu mirip KTP terdeteksi, dirapikan, dan divalidasi" width="100%">
+</p>
+
+<p align="center"><sub>
+  Output asli <a href="samples/README.md">aplikasi contoh</a> (SwiftUI di simulator iPhone, Jetpack Compose di emulator Android)
+  yang menjalankan model bawaan langsung di perangkat. Foto: Duman Photography / Unsplash; kartu adalah contoh fiktif buatan.
+</sub></p>
+
 ## Fitur
 
 | Kemampuan | Kelas utama |
@@ -16,6 +25,22 @@ Dokumentasi lengkap (bahasa Inggris) ada di [docs/README.md](docs/README.md).
 | Embedding & pencocokan selfie dengan foto KTP | `ArcFaceEmbedder`, `FaceMatcher` |
 | Deteksi & rektifikasi kartu KTP | `ClassicalKtpDetector`, `KtpScanner` |
 | Validasi KTP: rasio 1,586, ukuran, blur, glare, posisi foto | `KtpScanner` |
+
+## Lihat hasilnya
+
+Folder [`samples/`](samples/README.md) berisi dua aplikasi contoh modern - **Jetpack Compose** (Android) dan **SwiftUI**
+(iOS) - yang menjalankan pipeline asli langsung di perangkat:
+
+| Cek selfie | Scan KTP |
+|---|---|
+| ![Selfie iOS](docs/images/ios-selfie-result.png) | ![KTP iOS](docs/images/ios-ktp-result.png) |
+| ![Selfie Android](docs/images/android-selfie-result.png) | ![KTP Android](docs/images/android-ktp-result.png) |
+
+- **Cek selfie**: kotak wajah + 5 landmark, skor detektor, skor liveness pasif, ketajaman, dan sudut kepala.
+- **Scan KTP**: kontur kartu, kartu hasil rektifikasi 1011x638, ketajaman, glare, posisi foto.
+
+Kode integrasi hanya satu file per platform ([Kotlin](samples/android/app/src/main/kotlin/io/github/cybersafetyid/faktel/sample/FaktelEngine.kt),
+[Swift](samples/ios/FaktelDemo/FaktelEngine.swift)). Cara menjalankan: [samples/README.md](samples/README.md).
 
 ## Instalasi
 
@@ -63,3 +88,15 @@ if (scan.isAcceptable) { val kartu = scan.card!! } else { tampilkanPetunjuk(scan
 
 Kontributor sangat diterima! Baca [CONTRIBUTING.md](CONTRIBUTING.md) dan [Kode Etik](CODE_OF_CONDUCT.md).
 Versi mengikuti [SemVer](docs/development/versioning.md); perubahan dicatat di [CHANGELOG](CHANGELOG.md).
+
+## Terverifikasi
+
+Model asli (YuNet, MiniFASNetV2, ArcFace MobileFaceNet) sudah dijalankan end-to-end lewat ONNX Runtime di JVM desktop,
+simulator iPhone, **dan** emulator Android (lewat [aplikasi contoh](samples/README.md)). Belum diukur: latensi di
+ponsel Android kelas menengah asli; emulator juga belum otomatis di CI
+([rincian](docs/development/testing.md)).
+
+## Kontribusi & lisensi
+
+Kontribusi sangat diterima: lihat [CONTRIBUTING.md](CONTRIBUTING.md). Lisensi [Apache 2.0](LICENSE); bobot model punya
+lisensinya sendiri ([models/MODELS.md](models/MODELS.md), [NOTICE](NOTICE)).
