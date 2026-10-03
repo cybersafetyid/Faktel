@@ -25,8 +25,8 @@ kotlin {
         // Compile against the API only; each target brings its own runtime artifact below.
         getByName("ortJavaMain").dependencies { compileOnly(libs.onnxruntime.jvm) }
         androidMain {
-            // The AGP KMP-library target is not matched by `withAndroidTarget()` above, so share the sources explicitly.
-            kotlin.srcDir("src/ortJavaMain/kotlin")
+            // The AGP KMP-library target is not matched by `withAndroidTarget()` above, so link the shared source set explicitly.
+            dependsOn(getByName("ortJavaMain"))
             dependencies { implementation(libs.onnxruntime.android) }
         }
         jvmMain.dependencies { implementation(libs.onnxruntime.jvm) }
