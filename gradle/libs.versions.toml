@@ -2,7 +2,7 @@
 kotlin = "2.4.20"
 agp = "9.4.1"
 coroutines = "1.10.2"
-onnxruntime = "1.30.0"
+onnxruntime = "1.31.0"
 dokka = "2.2.0"
 binaryCompat = "0.18.2"
 vanniktech = "0.37.0"
